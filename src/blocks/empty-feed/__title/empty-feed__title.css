@@ -1,0 +1,17 @@
+.empty-feed__title {
+  font-family: "Jost", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.46;
+  letter-spacing: -0.33px;
+  color: #3A4374;
+  margin: 0;
+  padding: 16px 0 0 0;
+}
+
+@media screen and (max-width: 700px) {
+  .empty-feed__title {
+    font-size: 18px;
+  }
+}

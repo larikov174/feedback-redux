@@ -1,0 +1,20 @@
+.empty-feed__add-btn {
+  background-color: #AD1FEA;
+  border-radius: 10px;
+  border: none;
+  height: 44px;
+  width: 158px;
+  margin: 48px 0 0 0;
+  padding: 0;
+  font-family: "Jost", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.42;
+  color: #F2F4FE;
+}
+
+.empty-feed__add-btn:hover {
+  background: #C75AF6;
+  cursor: pointer;
+}

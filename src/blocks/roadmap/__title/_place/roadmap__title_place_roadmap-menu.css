@@ -1,0 +1,10 @@
+.roadmap__title_place_roadmap-menu {
+  font-size: 13px;
+  opacity: 0.4;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  cursor: pointer;
+}

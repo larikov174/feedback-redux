@@ -1,0 +1,9 @@
+.header-main__sort-arrow {
+  background-image: url(../../../assets/shared/icon-down-white.svg);
+  width: 8px;
+  height: 4px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0 0 0 9px;
+}

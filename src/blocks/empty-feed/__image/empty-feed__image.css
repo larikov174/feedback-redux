@@ -1,0 +1,19 @@
+.empty-feed__image {
+  width: 129px;
+  height: 136px;
+  background-image: url(../../../assets/suggestions/illustration-empty.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 111px 0 0 0;
+  padding: 0;
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 700px) {
+  .empty-feed__image {
+    width: 102px;
+    height: 108px;
+    margin: 76px 0 0 0;
+  }
+}

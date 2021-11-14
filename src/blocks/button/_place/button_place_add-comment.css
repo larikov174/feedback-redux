@@ -1,0 +1,6 @@
+@media screen and (max-width: 500px) {
+  .button_place_add-comment {
+    width: 119px;
+    height: 40px;
+  }
+}

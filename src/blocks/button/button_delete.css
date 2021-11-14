@@ -1,0 +1,20 @@
+.button_delete {
+  background-color: #D73737;
+  height: 44px;
+  width: 93px;
+  position: absolute;
+  left: 0;
+}
+
+.button_delete:hover {
+  background: #E98888;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 460px) {
+  .button_delete {
+    position: unset;
+    width: 100%;
+    margin: 16px 0 0 0;
+  }
+}

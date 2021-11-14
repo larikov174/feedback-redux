@@ -1,0 +1,24 @@
+.header-main__sort-unit {
+  font-family: "Jost", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.42;
+  color: #F2F4FE;
+  margin: 0 0 0 38px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+.header-main__sort-unit:hover {
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 320px) {
+  .header-main__sort-unit {
+    margin: 0 0 0 7px;
+  }
+}

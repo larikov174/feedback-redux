@@ -1,0 +1,8 @@
+.hamburger__tag-area {
+  width: 100%;
+  min-height: 166px;
+  background: #ffff;
+  border-radius: 10px;
+  padding: 24px 50px 24px 24px;
+  box-sizing: border-box;
+}

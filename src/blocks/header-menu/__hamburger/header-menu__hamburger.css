@@ -1,0 +1,20 @@
+.header-menu__hamburger {
+  display: none;
+  width: 20px;
+  height: 17px;
+  background-image: url(../../../assets/shared/mobile/icon-hamburger.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: transparent;
+  position: absolute;
+  right: 24px;
+  cursor: pointer;
+  border: none;
+}
+
+@media screen and (max-width: 700px) {
+  .header-menu__hamburger {
+    display: block;
+  }
+}

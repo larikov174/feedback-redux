@@ -1,0 +1,10 @@
+.tag-area__container {
+  max-width: 180px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

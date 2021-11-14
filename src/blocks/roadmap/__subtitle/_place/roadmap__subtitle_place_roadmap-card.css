@@ -1,0 +1,5 @@
+@media screen and (max-width: 768px) {
+  .roadmap__subtitle_place_roadmap-card {
+    font-size: 13px;
+  }
+}

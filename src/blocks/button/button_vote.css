@@ -1,0 +1,11 @@
+.button_vote {
+  background-color: #F2F4FE;
+  color: #3A4374;
+  border-radius: 10px;
+  border: none;
+}
+
+.button_vote:hover {
+  background-color: #CFD7FF;
+  cursor: pointer;
+}

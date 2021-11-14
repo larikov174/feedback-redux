@@ -1,0 +1,16 @@
+.button_edit {
+  background-color: #4661E6;
+  height: 44px;
+  width: 142px;
+}
+
+.button_edit:hover {
+  background-color: #7C91F9;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 750px) {
+  .button_edit {
+    width: 119px;
+  }
+}

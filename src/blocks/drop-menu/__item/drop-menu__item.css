@@ -1,0 +1,15 @@
+.drop-menu__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #647196;
+  cursor: pointer;
+}
+
+.drop-menu__item:hover {
+  color: #AD1FEA;
+}
+
+.drop-menu__item:not(:first-of-type) {
+  border-top: 1px solid rgba(58, 67, 116, 0.15);
+}

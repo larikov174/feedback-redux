@@ -1,0 +1,8 @@
+.tag-item_place_menu {
+  margin: 14px 0 0 0;
+}
+
+.tag-item_place_menu:hover {
+  background-color: #CFD7FF;
+  cursor: pointer;
+}
