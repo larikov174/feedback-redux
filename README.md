@@ -1,6 +1,6 @@
 # Project: [Product feedback app][git]
 
-[git]: https://larikov174.github.io/feedback-app/index.html
+[git]: https://larikov174.github.io/feedback-redux/index.html
 
 ## Description:
 
@@ -18,12 +18,12 @@ This is product feedback application where users able to:
 
 - **HTML5**
 - **CSS3**
-- **Grid-layout** 
+- **Grid-layout**
 - **BEM Nested**
 - **Figma**
 - **Pixel perfect**
-- **JavaScript**
-- **JSON, AJAX**
+- **React**
+- **Redux**
 
 
 ---

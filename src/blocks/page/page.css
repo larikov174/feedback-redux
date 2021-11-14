@@ -1,0 +1,13 @@
+.page {
+  margin: 0 auto;
+  padding: 0;
+  background-color: #F7F8FD;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 400px) {
+  .page {
+    display: block;
+  }
+}
