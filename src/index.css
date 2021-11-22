@@ -93,6 +93,8 @@
 
 @import url(./blocks/feed-cards/feed-cards.css);
 
+@import url(./blocks/hide/hide.css);
+
 * {
   outline: 1px solid red;
 }

@@ -1,0 +1,40 @@
+.page {
+  font-size: 20px;
+  font-family: "Helvetica Neue", Helvet;
+  line-height: 1.2;
+  color: #fff;
+  background: #000;
+  text-decoration: underline;
+  margin: 0;
+  padding: 0;
+}
+
+.body {
+  color: white;
+  background: #000;
+}
+
+.main {
+  width: 10px;
+}
+.main__icon {
+  height: 20px;
+}
+.main__icon_active {
+  border: 1px solid red;
+}
+
+.nav ul {
+  width: 20px;
+}
+.nav li {
+  width: 10px;
+}
+.nav a {
+  width: 5px;
+}
+.nav a:hover {
+  background: transparent;
+}
+
+/*# sourceMappingURL=output.css.map */
