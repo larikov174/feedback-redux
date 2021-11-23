@@ -1,0 +1,98 @@
+@font-face {
+  font-family: "Jost";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: local("Jost-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Jost";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: local("Jost-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Jost";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: local("Jost-Bold.ttf") format("truetype");
+}
+.header {
+  grid-area: 1/1/2/2;
+  max-width: 255px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background: radial-gradient(128.88% 128.88% at 103.9% -10.39%, #e84d70 0%, #a337f6 53.09%, #28a7ed 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.header__title {
+  font-family: Jost, Arial, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 29px;
+  letter-spacing: -0.25px;
+  color: #ffff;
+  margin: 0;
+  padding: 0;
+}
+.header__subtitle {
+  font-family: Jost, Arial, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  color: #ffff;
+  mix-blend-mode: normal;
+  opacity: 0.75;
+  margin: 0;
+  padding: 0;
+}
+.header__hamburger-button {
+  display: none;
+  width: 20px;
+  height: 17px;
+  background-image: url(../../../assets/shared/mobile/icon-hamburger.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: transparent;
+  position: absolute;
+  right: 24px;
+  cursor: pointer;
+  border: none;
+}
+
+@media screen and (max-width: 700px) {
+  .header {
+    max-width: 100%;
+    border-radius: 0;
+    min-height: 72px;
+    justify-content: center;
+    position: relative;
+  }
+  .header__title {
+    font-family: Jost, Arial, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: -0.25px;
+  }
+  .header__subtitle {
+    font-family: Jost;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 19px;
+  }
+  .header__hamburger-button {
+    display: block;
+  }
+}
+
+/*# sourceMappingURL=header.css.map */

@@ -1,0 +1,107 @@
+$regular: 400;
+$semibold: 600;
+$bold: 700;
+$fontFamily: Jost, Arial, sans-serif;
+
+@mixin fontFace($weight, $src) {
+  font: {
+    family: "Jost";
+    style: normal;
+    display: swap;
+    weight: $weight;
+  }
+  src: $src;
+}
+
+@font-face {
+  @include fontFace(
+    $weight: $regular,
+    $src: local("Jost-Regular.ttf") format("truetype")
+  );
+}
+@font-face {
+  @include fontFace(
+    $weight: $semibold,
+    $src: local("Jost-SemiBold.ttf") format("truetype")
+  );
+}
+@font-face {
+  @include fontFace(
+    $weight: $bold,
+    $src: local("Jost-Bold.ttf") format("truetype")
+  );
+}
+
+@mixin h1 {
+  font: {
+    family: $fontFamily;
+    size: 24px;
+    style: normal;
+    weight: $bold;
+  }
+  line-height: 35px;
+  letter-spacing: -0.33px;
+}
+
+@mixin h2 {
+  font: {
+    family: $fontFamily;
+    size: 20px;
+    style: normal;
+    weight: $bold;
+  }
+  line-height: 29px;
+  letter-spacing: -0.25px;
+}
+
+@mixin h3 {
+  font: {
+    family: $fontFamily;;
+    size: 18px;
+    style: normal;
+    weight: $bold;
+  }
+  line-height: 26px;
+  letter-spacing: -0.25px;
+}
+
+@mixin h4 {
+  font: {
+    family: $fontFamily;
+    size: 14px;
+    style: normal;
+    weight: $bold;
+  }
+  line-height: 20px;
+  letter-spacing: -0.25px;
+}
+
+@mixin p1 {
+  font: {
+    family: $fontFamily;
+    size: 16px;
+    style: normal;
+    weight: $regular;
+  }
+  line-height: 23px;
+}
+
+@mixin p2 {
+  font: {
+    family: $fontFamily;
+    size: 15px;
+    style: normal;
+    weight: $regular;
+  }
+  line-height: 22px;
+}
+
+@mixin p3 {
+  font: {
+    family: Jost;
+    size: 13px;
+    style: normal;
+    weight: $semibold;
+  }
+  line-height: 19px;
+}

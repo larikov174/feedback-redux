@@ -1,4 +1,5 @@
-@import "colors";
+@use "colors";
+@use './src/vendor/fonts/fonts';
 
 $color: #fff;
 
@@ -14,14 +15,19 @@ $color: #fff;
 }
 
 .page {
-  @include large-text;
+  @include large-text;  //mixin import
   margin: 0;
   padding: 0;
 }
 
+.zone {
+  @include fonts.h1;
+  border: none;
+}
+
 .body {
-  color: $font-color;
-  background: $back-color;
+  color: colors.$font-color;  // variable import
+  background: colors.$back-color;
 }
 
 .main {

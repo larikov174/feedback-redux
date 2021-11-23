@@ -1,14 +1,11 @@
 @import url(./vendor/normolize.css);
-@import url(./vendor/fonts/fonts.css);
+/* @import url(./vendor/fonts/fonts.css); */
 
 @import url(./blocks/page/page.css);
 @import url(./blocks/container-main/container-main.css);
 @import url(./blocks/menu/menu.css);
 
-@import url(./blocks/header-menu/header-menu.css);
-@import url(./blocks/header-menu/__title/header-menu__title.css);
-@import url(./blocks/header-menu/__subtitle/header-menu__subtitle.css);
-@import url(./blocks/header-menu/__hamburger/header-menu__hamburger.css);
+@import url(./components/header/header.css);
 
 @import url(./blocks/tag-area/tag-area.css);
 @import url(./blocks/tag-area/__container/tag-area__container.css);
