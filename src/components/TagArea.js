@@ -4,15 +4,15 @@ export const TagArea = () => {
   const tagNames = ["All", "UX", "UI", "Enhancement", "Bug", "Feature"];
   const renderLis = tagNames.map((name) => (
     <li key={name}>
-      <button class="tag-item tag-item_place_menu tag-item_active">
+      <button className="tag-item tag-item_place_menu tag-item_active">
         {name}
       </button>
     </li>
   ));
 
   return (
-    <nav class="tag-area">
-      <ul class="tag-area__container">
+    <nav className="tag-area">
+      <ul className="tag-area__container">
         {renderLis}
       </ul>
     </nav>

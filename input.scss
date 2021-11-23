@@ -54,3 +54,32 @@ $color: #fff;
     }
   }
 }
+
+// @mixin fontFace($weight, $src) {
+//   font: {
+//     family: "Jost";
+//     style: normal;
+//     display: swap;
+//     weight: $weight;
+//   }
+//   src: $src;
+// }
+
+// @font-face {
+//   @include fontFace(
+//     $weight: $regular,
+//     $src: local("Jost-Regular.ttf") format("truetype")
+//   );
+// }
+// @font-face {
+//   @include fontFace(
+//     $weight: $semibold,
+//     $src: local("Jost-SemiBold.ttf") format("truetype")
+//   );
+// }
+// @font-face {
+//   @include fontFace(
+//     $weight: $bold,
+//     $src: local("Jost-Bold.ttf") format("truetype")
+//   );
+// }

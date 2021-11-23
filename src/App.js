@@ -1,7 +1,7 @@
 import React from "react";
-import { Header } from "./components/header/Header";
+import { Header } from "./components/Header";
+import { TagArea } from "./components/TagArea";
 // import { FeedbackBanner } from "./components/feedbackBanner/FeedbackBanner";
-// import { TagArea } from "./components/tagArea/TagArea";
 // import { Roadmap } from "./components/roadmap/Roadmap";
 // import { Hamburger } from "./components/hamburger/Hamburger";
 // import { EmptyFeed } from "./components/emptyFeed/EmptyFeed";
@@ -9,11 +9,10 @@ import { Header } from "./components/header/Header";
 function App() {
   return (
     <div className="page">
-      <article className="container-main">
+      <article className="main-container">
         <section className="menu">
-          {/* первый квадрат и заголовок */}
           <Header />
-
+          <TagArea />
         </section>
 
       </article>

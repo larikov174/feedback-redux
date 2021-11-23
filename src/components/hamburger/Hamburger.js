@@ -1,5 +1,5 @@
 import React from "react";
-import { TagArea } from "../tagArea/TagArea";
+import { TagArea } from "../TagArea";
 import { Roadmap } from "../roadmap/Roadmap";
 
 export const Hamburger = () => {

@@ -1,8 +1,9 @@
-@use "../../../styles";
+@use "../vendor/fonts";
 
 .header {
   grid-area: 1 / 1 / 2 / 2;
   max-width: 255px;
+  min-height: 137px;
   box-sizing: border-box;
   border-radius: 10px;
   background: radial-gradient(
@@ -14,16 +15,17 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  padding: 24px;
 
   &__title {
-    @include styles.font-h2;
+    @include fonts.h2;
     color: #ffff;
     margin: 0;
     padding: 0;
   }
 
   &__subtitle {
-    @include styles.font-p2;
+    @include fonts.p2;
     color: #ffff;
     mix-blend-mode: normal;
     opacity: 0.75;
@@ -36,7 +38,7 @@
     width: 20px;
     height: 17px;
     background: {
-      image: url(../../../assets/shared/mobile/icon-hamburger.svg);
+      image: url(./assets/shared/mobile/icon-hamburger.svg);
       repeat: no-repeat;
       position: center;
       size: cover;
@@ -58,11 +60,11 @@
     position: relative;
 
     &__title {
-      @include styles.font-h4;
+      @include fonts.h4;
     }
 
     &__subtitle {
-      @include styles.font-p3;
+      @include fonts.p3;
     }
 
     &__hamburger-button {
