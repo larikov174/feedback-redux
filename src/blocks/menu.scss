@@ -12,12 +12,12 @@
 @media screen and (max-width: 1120px) {
   .menu {
     grid-template-rows: 1fr;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 223px);
     gap: 0 10px;
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 730px) {
   .menu {
     grid-template-columns: 1fr;
   }

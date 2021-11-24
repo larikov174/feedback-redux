@@ -340,8 +340,6 @@ template {
 
 .header {
   grid-area: 1/1/2/2;
-  max-width: 255px;
-  min-height: 137px;
   box-sizing: border-box;
   border-radius: 10px;
   background: radial-gradient(128.88% 128.88% at 103.9% -10.39%, #e84d70 0%, #a337f6 53.09%, #28a7ed 100%);
@@ -387,8 +385,7 @@ template {
   cursor: pointer;
   border: none;
 }
-
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 730px) {
   .header {
     max-width: 100%;
     border-radius: 0;
@@ -415,6 +412,7 @@ template {
     display: block;
   }
 }
+
 .page {
   height: 100vh;
   margin: 0 auto;
@@ -443,7 +441,7 @@ template {
     padding: 56px 0 0 0;
   }
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 730px) {
   .main-container {
     grid-template-rows: 1fr;
     gap: 0;
@@ -468,18 +466,16 @@ template {
 @media screen and (max-width: 1120px) {
   .menu {
     grid-template-rows: 1fr;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 223px);
     gap: 0 10px;
   }
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 730px) {
   .menu {
     grid-template-columns: 1fr;
   }
 }
 .tag-area {
-  width: 100%;
-  min-height: 166px;
   background: #ffff;
   border-radius: 10px;
   padding: 24px 50px 24px 24px;
@@ -496,10 +492,158 @@ template {
   margin: 0;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 730px) {
   .tag-area {
     display: none;
   }
+}
+.tag-item {
+  font-family: Jost;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 19px;
+  height: 30px;
+  max-width: fit-content;
+  background-color: #f2f4ff;
+  color: #4661e6;
+  border-radius: 10px;
+  border: none;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+@media screen and (max-width: 730px) {
+  .tag-item_place_feed-card {
+    grid-area: 3/1/4/3;
+  }
+}
+.tag-item_place_menu {
+  margin-bottom: 14px;
+}
+.tag-item_place_menu:hover {
+  background-color: #cfd7ff;
+  cursor: pointer;
+}
+.tag-item_roadmap-card {
+  margin-top: 16px;
+}
+.tag-item_active {
+  background-color: #4661e6;
+  color: #ffffff;
+}
+.tag-item_active:hover {
+  background-color: #4661e6;
+}
+
+.roadmap {
+  background: #ffff;
+  border-radius: 10px;
+  margin: 0;
+  padding: 19px 24px 24px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 26px;
+  grid-auto-rows: 23px;
+}
+.roadmap__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 24px;
+}
+.roadmap__unit {
+  height: 23px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+.roadmap__icon-block {
+  width: 24px;
+  margin: 0;
+}
+.roadmap__icon {
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background-color: #f49f85;
+}
+.roadmap__name {
+  font-family: "Jost", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: -0.25px;
+  color: #647196;
+  width: 100%;
+  margin: 0;
+}
+.roadmap__number {
+  font-family: "Jost", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23px;
+  color: #647196;
+  width: 7.2463768116%;
+  margin: 0;
+}
+.roadmap__title {
+  font-family: "Jost", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: -0.25px;
+  color: #3a4374;
+  margin: 0;
+  padding: 0;
+}
+.roadmap__title_light {
+  font-family: "Jost", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 35px;
+  letter-spacing: -0.33px;
+  color: #fff;
+}
+@media screen and (max-width: 450px) {
+  .roadmap__title_light {
+    font-family: "Jost", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: -0.25px;
+  }
+}
+@media screen and (max-width: 730px) {
+  .roadmap {
+    display: none;
+  }
+}
+.roadmap__link {
+  font-family: Jost;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 19px;
+  color: #4661e6;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  height: 100%;
+  align-items: center;
+}
+.roadmap__link:hover {
+  color: #8397f8;
 }
 
 /*# sourceMappingURL=index.css.map */

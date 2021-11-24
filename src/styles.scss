@@ -1,8 +1,10 @@
-@use "./vendor/normolize";
-@use "./vendor/fonts";
+@use "./blocks/normolize";
+@use "./blocks/fonts";
 
 @use "./blocks/header";
 @use "./blocks/page";
 @use "./blocks/main-container";
 @use "./blocks/menu";
 @use "./blocks/tag-area";
+@use "./blocks/tag-item";
+@use "./blocks/roadmap";

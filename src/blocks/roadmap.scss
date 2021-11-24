@@ -1,0 +1,89 @@
+@use "./fonts";
+
+.roadmap {
+  background: #ffff;
+  border-radius: 10px;
+  margin: 0;
+  padding: 19px 24px 24px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 26px;
+  grid-auto-rows: 23px;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 24px;
+  }
+
+  &__unit {
+    height: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+  }
+
+  &__icon-block {
+    width: 24px;
+    margin: 0;
+  }
+
+  &__icon {
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background-color: #f49f85;
+  }
+
+  &__name {
+    @include fonts.h4;
+    color: #647196;
+    width: 100%;
+    margin: 0;
+  }
+
+  &__number {
+    @include fonts.p1;
+    color: #647196;
+    width: calc(15 / 207 * 100%);
+    margin: 0;
+  }
+
+  &__title {
+    @include fonts.h3;
+    color: #3a4374;
+    margin: 0;
+    padding: 0;
+
+    &_light {
+      @include fonts.h1;
+      color: #fff;
+
+      @media screen and (max-width: 450px) {
+        @include fonts.h3;
+      }
+    }
+  }
+
+  @media screen and (max-width: 730px) {
+    display: none;
+  }
+
+  &__link {
+    @include fonts.p3;
+    color: #4661e6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+    align-items: center;
+
+    &:hover {
+      color: #8397f8;
+    }
+  }
+}

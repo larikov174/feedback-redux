@@ -1,8 +1,8 @@
 import React from "react";
 import { Header } from "./components/Header";
 import { TagArea } from "./components/TagArea";
+import { Roadmap } from "./components/Roadmap";
 // import { FeedbackBanner } from "./components/feedbackBanner/FeedbackBanner";
-// import { Roadmap } from "./components/roadmap/Roadmap";
 // import { Hamburger } from "./components/hamburger/Hamburger";
 // import { EmptyFeed } from "./components/emptyFeed/EmptyFeed";
 
@@ -13,6 +13,7 @@ function App() {
         <section className="menu">
           <Header />
           <TagArea />
+          <Roadmap />
         </section>
 
       </article>
@@ -30,7 +31,7 @@ export default App;
 //   {/* навигация по тегам */}
 //   <TagArea />
 //   {/* роадмэп данные */}
-//   <Roadmap />
+//   
 // </section>
 // {/* гамбургер */}
 // <Hamburger />
