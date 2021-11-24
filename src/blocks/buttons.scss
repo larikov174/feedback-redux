@@ -1,0 +1,33 @@
+@use "./fonts";
+
+.button {
+  @include fonts.h4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: none;
+  color: #f2f4fe;
+  margin: 0;
+  padding: 0;
+
+  &__submit {
+    background-color: #ad1fea;
+    width: 158px;
+    height: 44px;
+
+    &_place_control-bar {
+      position: absolute;
+      right: 16px;
+    }
+
+    @media screen and (max-width: 550px) {
+      width: 134px;
+    }
+
+    &:hover {
+      background: #c75af6;
+      cursor: pointer;
+    }
+  }
+}

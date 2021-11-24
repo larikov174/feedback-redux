@@ -9,26 +9,24 @@ export const ControlBar = () => {
     "Least Comments",
   ];
   const renderLis = tagNames.map((name) => (
-    <li key={name} className="drop-menu__item" data-id="Most Upvotes">
-      <span className="drop-menu__text">{name}</span>
-      <span className="drop-menu__icon drop-menu__icon_active"></span>
+    <li key={name} className="control-bar__drop-menu-item">
+      <div className="control-bar__drop-menu-text">{name}</div>
+      <div className="control-bar__drop-menu-icon" />
     </li>
   ));
   return (
     <section className="control-bar">
-      <header className="header-main">
-        <div className="header-main__icon"></div>
-        <div className="header-main__title"></div>
-        <p className="header-main__sort-unit">
-          Sort by&nbsp;:&nbsp;
-          <span className="header-main__sort-text">Most Upvotes</span>
-          <span className="header-main__sort-arrow"></span>
-          <ul className="drop-menu hide">{renderLis}</ul>
-        </p>
-        <Link to="/" className="button button_add button_place_header-main">
-          &#43; Add Feedback
-        </Link>
-      </header>
+      <div className="control-bar__icon" />
+      <div className="control-bar__title">12 Suggestions</div>
+      <Link to="/" className="button button__submit button__submit_place_control-bar">
+        &#43; Add Feedback
+      </Link>
+      <nav className="control-bar__sort-unit">
+        Sort by&nbsp;:&nbsp;
+        <span className="control-bar__sort-text">Most Upvotes</span>
+        <div className="control-bar__sort-arrow" />
+      </nav>
+        <ul className="control-bar__drop-menu">{renderLis}</ul>
       <div className="feed-cards"></div>
     </section>
   );

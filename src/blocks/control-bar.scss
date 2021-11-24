@@ -1,3 +1,5 @@
+@use "./fonts";
+
 .control-bar {
   width: 100%;
   height: 72px;
@@ -7,7 +9,123 @@
   align-items: center;
   position: relative;
 
-  @media screen and (max-width: 730px) {
+  &__icon {
+    width: 24px;
+    height: 24px;
+    background: {
+      image: url(./assets/suggestions/icon-suggestions.svg);
+      position: center;
+      size: cover;
+      repeat: no-repeat;
+    }
+    margin: 0 0 0 24px;
+  }
+
+  &__title {
+    min-width: fit-content;
+    @include fonts.h3;
+    color: #ffff;
+    margin: 0 0 0 16px;
+    padding: 0;
+  }
+
+  &__sort-unit {
+    min-width: fit-content;
+    @include fonts.p2;
+    height: 24px;
+    color: #f2f4fe;
+    margin: 0 0 0 38px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    user-select: none;
+
+    &:hover {
+      opacity: 0.75;
+      cursor: pointer;
+    }
+  }
+
+  &__sort-text {
+    @include fonts.h4;
+  }
+
+  &__sort-arrow {
+    background: {
+      image: url(./assets/shared/icon-down-white.svg);
+      position: center;
+      size: cover;
+      repeat: no-repeat;
+    }
+    width: 8px;
+    height: 4px;
+    margin: 0 0 0 9px;
+  }
+
+  &__drop-menu {
+    width: 255px;
+    min-height: 192px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 12px 24px 12px 24px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 10px 40px -7px rgba(55, 63, 104, 0.350492);
+    transform: translate(-55%, 70%);
+    z-index: 200;
+  }
+
+  &__drop-menu-text {
+    @include fonts.p1;
+    color: #647196;
+    margin: 12px 0 12px 0;
+    padding: 0;
+    user-select: none;
+
+    &:hover {
+      color: #ad1fea;
+    }
+  }
+
+  &__drop-menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+
+    &:not(:first-of-type) {
+      border-top: 1px solid rgba(58, 67, 116, 0.15);
+    }
+  }
+
+  &__drop-menu-icon {
+    background: {
+      image: url(./assets/shared/icon-check.svg);
+      position: center;
+      size: cover;
+    }
+    width: 11px;
+    height: 7.5px;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .control-bar {
     border-radius: 0;
+
+    &__icon {
+      display: none;
+    }
+
+    &__title {
+      display: none;
+    }
+
+    &__sort-unit {
+      @include fonts.p3;
+      margin: 0 0 0 24px;
+    }
   }
 }
