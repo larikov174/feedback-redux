@@ -2,7 +2,7 @@ import React from "react";
 import { Header } from "./components/Header";
 import { TagArea } from "./components/TagArea";
 import { Roadmap } from "./components/Roadmap";
-// import { FeedbackBanner } from "./components/feedbackBanner/FeedbackBanner";
+import { ControlBar } from "./components/ControlBar";
 // import { Hamburger } from "./components/hamburger/Hamburger";
 // import { EmptyFeed } from "./components/emptyFeed/EmptyFeed";
 
@@ -15,6 +15,7 @@ function App() {
           <TagArea />
           <Roadmap />
         </section>
+        <ControlBar />
 
       </article>
     </div>
