@@ -15,11 +15,6 @@
   user-select: none;
 
   &_place {
-    &_feed-card {
-      @media screen and (max-width: 730px) {
-        grid-area: 3 / 1 / 4 / 3;
-      }
-    }
     &_menu {
       margin-bottom: 14px;
       &:hover {
@@ -28,9 +23,11 @@
       }
     }
   }
+
   &_roadmap-card {
     margin-top: 16px;
   }
+  
   &_active {
     background-color: #4661e6;
     color: #ffffff;

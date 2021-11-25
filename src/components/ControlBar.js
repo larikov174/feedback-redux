@@ -14,11 +14,15 @@ export const ControlBar = () => {
       <div className="control-bar__drop-menu-icon" />
     </li>
   ));
+  
   return (
     <section className="control-bar">
       <div className="control-bar__icon" />
       <div className="control-bar__title">12 Suggestions</div>
-      <Link to="/" className="button button__submit button__submit_place_control-bar">
+      <Link
+        to="/"
+        className="button button__submit button__submit_place_control-bar"
+      >
         &#43; Add Feedback
       </Link>
       <nav className="control-bar__sort-unit">
@@ -26,8 +30,7 @@ export const ControlBar = () => {
         <span className="control-bar__sort-text">Most Upvotes</span>
         <div className="control-bar__sort-arrow" />
       </nav>
-        <ul className="control-bar__drop-menu">{renderLis}</ul>
-      <div className="feed-cards"></div>
+      <ul className="control-bar__drop-menu">{renderLis}</ul>
     </section>
   );
 };

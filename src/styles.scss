@@ -3,10 +3,14 @@
 
 @use "./blocks/header";
 @use "./blocks/page";
-@use "./blocks/main-container";
+@use "./blocks/main";
 @use "./blocks/menu";
 @use "./blocks/tag-area";
 @use "./blocks/tag-item";
 @use "./blocks/roadmap";
 @use "./blocks/control-bar";
 @use "./blocks/buttons";
+@use "./blocks/empty";
+@use "./blocks/feed-cards";
+@use "./blocks/card";
+@use "./blocks/footer";

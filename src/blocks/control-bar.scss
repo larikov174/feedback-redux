@@ -66,15 +66,17 @@
     width: 255px;
     min-height: 192px;
     background-color: #fff;
-    display: flex;
+    display: none;
     flex-direction: column;
     margin: 0;
     padding: 12px 24px 12px 24px;
     border: none;
     border-radius: 10px;
     box-shadow: 0px 10px 40px -7px rgba(55, 63, 104, 0.350492);
-    transform: translate(-55%, 70%);
     z-index: 200;
+    position: absolute;
+    top: 120%;
+    left: 27%;
   }
 
   &__drop-menu-text {
@@ -111,9 +113,20 @@
   }
 }
 
+@media screen and (max-width: 1120px) {
+  .control-bar {
+    margin-top: 40px;
+
+    &__drop-menu {
+      left: 32%;
+    }
+  }
+}
+
 @media screen and (max-width: 730px) {
   .control-bar {
     border-radius: 0;
+    margin-top: 0;
 
     &__icon {
       display: none;
@@ -126,6 +139,10 @@
     &__sort-unit {
       @include fonts.p3;
       margin: 0 0 0 24px;
+    }
+
+    &__drop-menu {
+      left: 0;
     }
   }
 }

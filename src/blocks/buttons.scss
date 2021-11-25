@@ -10,6 +10,7 @@
   color: #f2f4fe;
   margin: 0;
   padding: 0;
+  text-decoration: none;
 
   &__submit {
     background-color: #ad1fea;
@@ -21,6 +22,10 @@
       right: 16px;
     }
 
+    &_place_empty {
+      margin: 48px 0 0 0;
+    }
+
     @media screen and (max-width: 550px) {
       width: 134px;
     }
@@ -28,6 +33,10 @@
     &:hover {
       background: #c75af6;
       cursor: pointer;
+    }
+
+    &_place_empty {
+      margin: 24px 0 0 0;
     }
   }
 }

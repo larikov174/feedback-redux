@@ -1,0 +1,150 @@
+@use "./fonts";
+
+.card {
+  min-height: 151px;
+  margin: 24px 0 0 0;
+  padding: 0;
+  background-color: #ffff;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 112px 1fr 76px;
+  grid-template-rows: repeat(3, max-content);
+  color: #3a4374;
+
+  &__title {
+    @include fonts.h3;
+    color: inherit;
+    margin: 0;
+    padding: 28px 0 0 0;
+    grid-area: 1 / 2 / 2 / 3;
+  }
+
+  &__text {
+    @include fonts.p1;
+    color: #647196;
+    margin: 0;
+    padding: 4px 0 0 0;
+    grid-area: 2 / 2 / 3 / 3;
+  }
+
+  &__overlay {
+    grid-area: 1 / 1 / 5 / 4;
+    z-index: 100;
+    cursor: pointer;
+  }
+
+  &__tag {
+    grid-area: 3 / 2 / 4 / 3;
+    margin-top: 12px;
+  }
+
+  &__vote-button {
+    background-color: #f2f4fe;
+    color: #3a4374;
+    border-radius: 10px;
+    border: none;
+    width: 40px;
+    height: 53px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    grid-area: 1 / 1 / 4 / 2;
+    padding: 0;
+    margin: 26px auto;
+    z-index: 150;
+
+    &:hover {
+      background-color: #cfd7ff;
+      cursor: pointer;
+    }
+
+    &-number {
+      @include fonts.h4;
+      color: inherit;
+      margin: 0;
+      padding: 0;
+    }
+
+    &-icon {
+      background: {
+        image: url(./assets/shared/icon-arrow-up.svg);
+        position: center;
+        size: cover;
+        repeat: no-repeat;
+      }
+      width: 8px;
+      height: 4px;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  &:hover {
+    color: #4661e6;
+  }
+
+  &__comments {
+    display: flex;
+    align-items: center;
+    grid-area: 1 / 3 / 4 / 4;
+
+    &-icon {
+      width: 18px;
+      height: 18px;
+      background: {
+        image: url(./assets/shared/icon-comments.svg);
+        position: center;
+        size: cover;
+        repeat: no-repeat;
+      }
+      margin: 0;
+      padding: 0;
+    }
+
+    &-number {
+      @include fonts.h3;
+      color: #3a4374;
+      margin: 0 0 0 8px;
+      padding: 0;
+    }
+  }
+
+  @media screen and (max-width: 730px) {
+    grid-template-columns: 1fr 64px;
+    grid-template-rows: repeat(4, max-content);
+    padding: 0 24px 24px 24px;
+    gap: 10px 0;
+    min-width: 0;
+
+    &__overlay {
+      grid-area: 1 / 1 / 5 / 3;
+    }
+
+    &__title {
+      @include fonts.h4;
+      grid-area: 1 / 1 / 2 / 3;
+    }
+
+    &__text {
+      @include fonts.p3;
+      grid-area: 2 / 1 / 3 / 3;
+    }
+
+    &__tag {
+      grid-area: 3 / 1 / 4 / 2;
+    }
+
+    &__vote-button {
+      grid-area: 4 / 1 / 5 / 2;
+      flex-direction: row;
+      width: 69px;
+      height: 39px;
+      margin: 0;
+    }
+
+    &__comments {
+      grid-area: 4 / 2 / 5 / 3;
+    }
+  }
+}

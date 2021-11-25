@@ -1,0 +1,29 @@
+@use "./fonts";
+
+.footer {
+  max-width: 1110px;
+  display: flex;
+  min-height: fit-content;
+  margin: 0 auto;
+  padding: 20px 10px;
+  justify-content: center;
+
+  &__text {
+    @include fonts.h4;
+    color: #3a4374;
+  }
+
+  &__link {
+    @include fonts.p2;
+    color: #647196;
+    text-decoration: none;
+  }
+
+  @media screen and (max-width: 1120px) {
+    max-width: 689px;
+  }
+
+  @media screen and (max-width: 730px) {
+    flex-direction: column;
+  }
+}

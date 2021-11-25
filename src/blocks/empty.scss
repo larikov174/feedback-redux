@@ -1,0 +1,70 @@
+@use "./fonts";
+
+.empty {
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  margin: 24px auto 128px;
+  padding: 110px 0;
+  background-color: #ffff;
+  border-radius: 10px;
+  color: #3a4374;
+
+  &__title {
+    @include fonts.h1;
+    margin: 0;
+    padding: 16px 0 0 0;
+  }
+
+  &__text {
+    @include fonts.p1;
+    margin: 0;
+    padding: 16px 0 0 0;
+    width: 410px;
+    min-height: 46px;
+    text-align: center;
+  }
+
+  &__image {
+    width: 129px;
+    height: 136px;
+    background: {
+      image: url(./assets/suggestions/illustration-empty.svg);
+      position: center;
+      size: cover;
+      repeat: no-repeat;
+    }
+    margin: 0;
+    padding: 0;
+    opacity: 0.5;
+  }
+}
+
+@media screen and (max-width: 1120px) {
+  .empty {
+    margin: 32px auto 47px;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .empty {
+    margin: 32px auto 47px;
+    padding: 76px 0;
+
+    &__title {
+      @include fonts.h3;
+    }
+
+    &__text {
+      @include fonts.p3;
+      width: 278px;
+    }
+
+    &__image {
+      width: 102px;
+      height: 108px;
+      margin: 76px 0 0 0;
+    }
+  }
+}
