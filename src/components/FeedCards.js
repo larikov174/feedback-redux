@@ -1,10 +1,10 @@
 import React from "react";
 import { Card } from "./Card";
 
-export const FeedCards = () => {
+export const FeedCards = ({ initData }) => {
   return (
     <section className="feed-cards">
-      <Card />
+      <Card initData={initData} />
     </section>
   );
 };

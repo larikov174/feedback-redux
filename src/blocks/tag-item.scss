@@ -22,15 +22,16 @@
         cursor: pointer;
       }
     }
+
+    &_roadmap-card {
+      margin-top: 16px;
+    }
   }
 
-  &_roadmap-card {
-    margin-top: 16px;
-  }
-  
   &_active {
     background-color: #4661e6;
     color: #ffffff;
+    
     &:hover {
       background-color: #4661e6;
     }

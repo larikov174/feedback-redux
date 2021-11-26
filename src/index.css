@@ -524,7 +524,7 @@ template {
   background-color: #cfd7ff;
   cursor: pointer;
 }
-.tag-item_roadmap-card {
+.tag-item_place_roadmap-card {
   margin-top: 16px;
 }
 .tag-item_active {
@@ -582,10 +582,11 @@ template {
 }
 .roadmap__number {
   font-family: "Jost", sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-style: normal;
-  font-weight: 400;
-  line-height: 23px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: -0.25px;
   color: #647196;
   width: 7.2463768116%;
   margin: 0;

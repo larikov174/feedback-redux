@@ -2,19 +2,15 @@ import React from "react";
 
 export const TagArea = () => {
   const tagNames = ["All", "UX", "UI", "Enhancement", "Bug", "Feature"];
-  const renderLis = tagNames.map((name) => (
-    <li key={name}>
-      <button className="tag-item tag-item_place_menu tag-item_active">
-        {name}
-      </button>
-    </li>
+  const renderBtns = tagNames.map((name) => (
+    <button className="tag-item tag-item_place_menu" key={name} type="button">
+      {name}
+    </button>
   ));
 
   return (
-    <nav className="tag-area">
-      <ul className="tag-area__container">
-        {renderLis}
-      </ul>
+    <nav className="tag-area ">
+      <div className="tag-area__container">{renderBtns}</div>
     </nav>
   );
 };

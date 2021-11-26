@@ -46,7 +46,7 @@
   }
 
   &__number {
-    @include fonts.p1;
+    @include fonts.h4;
     color: #647196;
     width: calc(15 / 207 * 100%);
     margin: 0;
