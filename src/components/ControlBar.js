@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export const ControlBar = () => {
+export const ControlBar = ({ cards }) => {
   const tagNames = [
     "Most Upvotes",
     "Least Upvotes",
@@ -14,11 +14,11 @@ export const ControlBar = () => {
       <div className="control-bar__drop-menu-icon" />
     </li>
   ));
-  
+
   return (
     <section className="control-bar">
       <div className="control-bar__icon" />
-      <div className="control-bar__title">12 Suggestions</div>
+      <div className="control-bar__title">{cards.length} Suggestions</div>
       <Link
         to="/"
         className="button button__submit button__submit_place_control-bar"

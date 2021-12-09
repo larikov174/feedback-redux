@@ -1,4 +1,5 @@
 function api() {
+  const baseUrl = 'https://feedback-express-app.herokuapp.com'
   const handleResponse = (res) => {
     const answer = res.ok
       ? res.json()
@@ -8,7 +9,7 @@ function api() {
 
   return {
     loadCards() {
-      return fetch('./data.json', {
+      return fetch(`${baseUrl}/posts`, {
         method: "GET",
         headers: {
           Accept: "application/json",

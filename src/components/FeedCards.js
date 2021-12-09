@@ -1,10 +1,13 @@
 import React from "react";
 import { Card } from "./Card";
 
-export const FeedCards = ({ initData }) => {
+export const FeedCards = ({ cards }) => {
+  
   return (
     <section className="feed-cards">
-      <Card initData={initData} />
+      {cards.map((item) => (
+        <Card data={item} key={item._id} />
+      ))}
     </section>
   );
 };
