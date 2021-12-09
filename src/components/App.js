@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import { Menu } from "./Menu";
-import { ControlBar } from "./ControlBar";
+import { Main } from "./Main";
 import { Empty } from "./Empty";
+import { Card } from "./Card";
+import { CommentsContainer } from "./CommentsContainer";
 import { Footer } from "./Footer";
-import { FeedCards } from "./FeedCards";
 import api from "../utils/api";
 
 // import { Hamburger } from "./components/hamburger/Hamburger";
@@ -29,24 +29,16 @@ function App() {
 
   const handleCardClick = (card) => {
     setSelectedCard(card);
-    navigate(`/${card._id}`)
-    console.log(card);
-
+    navigate(`/comments`)
   };
 
   return (
     <div className="page">
-      <article className="main">
-        <Menu />
-        <ControlBar cards={cards} />
-        <Routes>
-          <Route
-            index
-            element={cards !== [] ? <FeedCards cards={cards} onCardClick={handleCardClick}/> : <Empty />}
-          />
-          <Route path="/comment" element={<Empty />} />
-        </Routes>
-      </article>
+      <Routes>
+        <Route index
+          element={cards !== [] ? <Main data={cards} onCardClick={handleCardClick} /> : <Empty />} />
+        <Route path="/comments" element={<CommentsContainer data={selectedCard} />} />
+      </Routes>
       <Footer />
     </div>
   );

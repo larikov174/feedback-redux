@@ -1,8 +1,8 @@
 import React from "react";
 import { Card } from "./Card";
 
-export const FeedCards = ({ cards, onCardClick }) => {
-  
+export const PostsContainer = ({ cards, onCardClick }) => {
+
   return (
     <section className="feed-cards">
       {cards.map((item) => (

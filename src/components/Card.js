@@ -19,7 +19,7 @@ export const Card = ({ data, onCardClick }) => {
       <div
         className="card__overlay"
         onClick={() => {
-          onCardClick({ _id: data._id });
+          onCardClick({ ...data });
         }}
       ></div>
     </article>

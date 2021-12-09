@@ -39,4 +39,17 @@
       margin: 24px 0 0 0;
     }
   }
+
+  &_edit {
+    background-color: #4661e6;
+    height: 44px;
+    width: 142px;
+    &:hover {
+      background-color: #7c91f9;
+      cursor: pointer;
+    }
+    @media screen and (max-width: 750px) {
+      width: 119px;
+    }
+  }
 }

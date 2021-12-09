@@ -1,0 +1,38 @@
+@use "./fonts";
+
+.return {
+  display: flex;
+  width: 75px;
+  height: 20px;
+  align-items: center;
+  justify-content: space-between;
+  @include fonts.h4;
+  color: #647196;
+  margin: 0 0 0 15px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 450px) {
+    @include fonts.p3;
+  }
+
+  &__arrow {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 4px;
+    height: 8px;
+    margin: 0;
+    padding: 0;
+
+    &_dark {
+      background-image: url(./assets/shared/icon-arrow-left.svg);
+    }
+  }
+}
