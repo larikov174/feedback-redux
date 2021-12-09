@@ -10,8 +10,10 @@ import api from "../utils/api";
 // import { Hamburger } from "./components/hamburger/Hamburger";
 
 function App() {
+  let navigate = useNavigate();
   const { loadCards } = api();
   const [cards, setCards] = useState([]);
+  const [selectedCard, setSelectedCard] = useState({});
   const onStartGetData = () => {
     loadCards()
       .then((res) => setCards(res))
@@ -25,6 +27,13 @@ function App() {
     // eslint-disable-next-line
   }, []);
 
+  const handleCardClick = (card) => {
+    setSelectedCard(card);
+    navigate(`/${card._id}`)
+    console.log(card);
+
+  };
+
   return (
     <div className="page">
       <article className="main">
@@ -33,8 +42,9 @@ function App() {
         <Routes>
           <Route
             index
-            element={cards !== [] ? <FeedCards cards={cards} /> : <Empty />}
+            element={cards !== [] ? <FeedCards cards={cards} onCardClick={handleCardClick}/> : <Empty />}
           />
+          <Route path="/comment" element={<Empty />} />
         </Routes>
       </article>
       <Footer />

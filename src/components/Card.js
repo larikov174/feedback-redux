@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Card = ({ data }) => {
+export const Card = ({ data, onCardClick }) => {
   return (
     <article className="card">
       <button className="card__vote-button">
@@ -16,7 +16,12 @@ export const Card = ({ data }) => {
         <span className="card__comments-icon" />
         <span className="card__comments-number">{data.comments.length}</span>
       </div>
-      <div className="card__overlay"></div>
+      <div
+        className="card__overlay"
+        onClick={() => {
+          onCardClick({ _id: data._id });
+        }}
+      ></div>
     </article>
   );
 };
