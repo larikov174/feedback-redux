@@ -16,33 +16,12 @@
     background-color: #ad1fea;
     width: 158px;
     height: 44px;
-
-    &_place_control-bar {
-      position: absolute;
-      right: 16px;
-    }
-
-    &_place_empty {
-      margin: 48px 0 0 0;
-    }
-
-    &_place_comment {
-      grid-area: 1 / 2 / 2 / 3;
-      width: 117px;
-      margin: 0 0 0 16px;
-    }
-
     @media screen and (max-width: 550px) {
       width: 134px;
     }
-
     &:hover {
       background: #c75af6;
       cursor: pointer;
-    }
-
-    &_place_empty {
-      margin: 24px 0 0 0;
     }
   }
 
@@ -56,6 +35,60 @@
     }
     @media screen and (max-width: 750px) {
       width: 119px;
+    }
+  }
+
+  &_delete {
+    background-color: #d73737;
+    height: 44px;
+    width: 93px;
+    position: absolute;
+    left: 0;
+    cursor: pointer;
+    &:hover {
+      background: #e98888;
+    }
+    @media screen and (max-width: 460px) {
+      position: unset;
+      width: 100%;
+      margin: 16px 0 0 0;
+    }
+  }
+
+  &_cancel {
+    background-color: #3a4374;
+    height: 44px;
+    width: 93px;
+    cursor: pointer;
+    &:hover {
+      background: #656ea3;
+    }
+    @media screen and (max-width: 460px) {
+      width: 100%;
+      margin: 16px 0 0 0;
+    }
+  }
+
+  &_place_control-bar {
+    position: absolute;
+    right: 16px;
+  }
+
+  &_place_empty {
+    margin: 48px 0 0 0;
+  }
+
+  &_place_comment {
+    grid-area: 1 / 2 / 2 / 3;
+    width: 117px;
+    margin: 0 0 0 16px;
+  }
+
+  &_place_edit {
+    margin: 0 0 0 16px;
+    @media screen and (max-width: 460px) {
+      width: 100%;
+      margin: 0;
     }
   }
 }

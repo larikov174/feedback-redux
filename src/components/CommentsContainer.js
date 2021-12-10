@@ -11,7 +11,7 @@ export const CommentsContainer = ({ data }) => {
           <span className="return__arrow return__arrow_dark" />
           Go Back
         </Link>
-        <Link className="button button_edit" to="/">
+        <Link className="button button_edit" to="/edit">
           Edit Feedback
         </Link>
       </header>

@@ -16,7 +16,7 @@ export const Comment = ({ data }) => {
           <textarea className="comment__textarea"></textarea>
           <button
             type="submit"
-            className="button button_submit button_submit_place_comment"
+            className="button button_submit button_place_comment"
           >
             Post reply
           </button>

@@ -4,6 +4,7 @@ import { Main } from "./Main";
 import { Empty } from "./Empty";
 // import { Card } from "./Card";
 import { CommentsContainer } from "./CommentsContainer";
+import { EditComment } from "./EditComment";
 import { Footer } from "./Footer";
 import api from "../utils/api";
 
@@ -38,6 +39,7 @@ function App() {
         <Route index
           element={cards !== [] ? <Main data={cards} onCardClick={handleCardClick} /> : <Empty />} />
         <Route path="/comments" element={<CommentsContainer data={selectedCard} />} />
+        <Route path="/edit" element={<EditComment data={selectedCard} />} />
       </Routes>
       <Footer />
     </div>

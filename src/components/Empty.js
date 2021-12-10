@@ -12,7 +12,7 @@ export const Empty = () => {
       </p>
       <Link
         to="/"
-        className="button button__submit button__submit_place_empty"
+        className="button button__submit button_place_empty"
       >
         &#43; Add Feedback
       </Link>
