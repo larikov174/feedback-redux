@@ -1,6 +1,6 @@
 @use "./fonts";
 
-.edit {
+.edit-container {
   max-width: 540px;
   display: flex;
   flex-direction: column;
@@ -9,121 +9,5 @@
   padding: 0;
   @media screen and (max-width: 768px) {
     margin: 0 24px;
-  }
-
-  &-form__icon {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-image: url(./assets/shared/icon-pen.svg);
-    transform: translate(42px, 40px);
-    @media screen and (max-width: 620px) {
-      width: 40px;
-      height: 40px;
-    }
-    @media screen and (max-width: 500px) {
-      transform: translate(24px, 40px);
-    }
-  }
-
-  &-form {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    padding: 52px 42px 40px 42px;
-    margin: 12px 0 0 0;
-    box-sizing: border-box;
-    background-color: #ffff;
-    border-radius: 10px;
-    @media screen and (max-width: 500px) {
-      padding: 44px 24px 24px 24px;
-    }
-  }
-
-  &-form__title {
-    @include fonts.h1;
-    color: #3a4374;
-    margin: 0;
-    padding: 0;
-    @media screen and (max-width: 500px) {
-      @include fonts.h3;
-    }
-  }
-
-  &-form__subtitle {
-    @include fonts.h4;
-    color: #3a4374;
-    margin: 0;
-    padding: 40px 0 0 0;
-    &:nth-of-type(n + 2) {
-      padding: 24px 0 0 0;
-    }
-    @media screen and (max-width: 500px) {
-      @include fonts.p3;
-    }
-  }
-
-  &-form__text {
-    @include fonts.p2;
-    color: #647196;
-    margin: 0;
-    padding: 2px 0 0 0;
-    @media screen and (max-width: 500px) {
-      @include fonts.p3;
-    }
-  }
-
-  &-form__input {
-    @include fonts.p2;
-    min-height: 48px;
-    background-color: #f7f8fd;
-    border: none;
-    border-radius: 10px;
-    color: #3a4374;
-    margin: 16px 0 0 0;
-    padding: 0 24px;
-    overflow-y: visible;
-  }
-
-  &-form__select {
-    @include fonts.p2;
-    min-height: 48px;
-    background-color: #f7f8fd;
-    border: none;
-    border-radius: 10px;
-    color: #3a4374;
-    margin: 16px 0 0 0;
-    padding: 0 24px;
-    cursor: pointer;
-  }
-
-  &-form__textarea {
-    margin: 0;
-    padding: 5px 10px;
-    min-height: 96px;
-    grid-area: 1 / 1 / 2 / 2;
-    resize: none;
-    background-color: #f7f8fd;
-    border-radius: 10px;
-    border-color: #4661e6;
-    @include fonts.p2;
-    color: #8c92b3;
-    @media screen and (max-width: 500px) {
-      min-height: 120px;
-    }
-  }
-
-  &-form__actions {
-    display: flex;
-    justify-content: flex-end;
-    padding: 32px 0 0 0;
-    margin: 0;
-    position: relative;
-    @media screen and (max-width: 460px) {
-      flex-direction: column-reverse;
-      padding: 40px 0 0 0;
-    }
   }
 }
