@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { Main } from "./Main";
 import { Empty } from "./Empty";
-import { Card } from "./Card";
+// import { Card } from "./Card";
 import { CommentsContainer } from "./CommentsContainer";
 import { Footer } from "./Footer";
 import api from "../utils/api";

@@ -21,7 +21,7 @@ export const ControlBar = ({ cards }) => {
       <div className="control-bar__title">{cards.length} Suggestions</div>
       <Link
         to="/"
-        className="button button__submit button__submit_place_control-bar"
+        className="button button_submit button_submit_place_control-bar"
       >
         &#43; Add Feedback
       </Link>

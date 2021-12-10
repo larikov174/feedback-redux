@@ -1,0 +1,153 @@
+@use "./fonts";
+
+.comment {
+  background-color: #ffffff;
+  border-radius: 10px;
+  min-height: 233px;
+  display: flex;
+  flex-direction: column;
+  margin: 24px 0 0 0;
+  padding: 24px 32px 32px 32px;
+  box-sizing: border-box;
+
+  &__title {
+    @include fonts.h3;
+    color: #3a4374;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__card {
+    display: grid;
+    grid-template-columns: 72px 1fr 40px;
+    grid-template-rows: repeat(2, 20px) max-content;
+    margin: 0;
+    padding: 28px 0 0 0;
+
+    &:not(:first-of-type) {
+      border-top: 1px solid rgba(140, 146, 179, 0.25);
+      margin: 32px 0 0 0;
+      padding: 32px 0 0 0;
+    }
+
+    @media screen and (max-width: 750px) {
+      padding: 24px 0 0 0;
+
+      &:not(:first-of-type) {
+        margin: 24px 0 0 0;
+        padding: 24px 0 0 0;
+      }
+    }
+  }
+
+  &__avatar {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background: {
+      position: center;
+      repeat: no-repeat;
+    }
+    grid-area: 1 / 1 / 4 / 2;
+  }
+
+  &__name {
+    @include fonts.h4;
+    color: #3a4374;
+    margin: 0;
+    padding: 0;
+    grid-area: 1 / 2 / 2 / 3;
+
+    @media screen and (max-width: 750px) {
+      @include fonts.p3;
+    }
+  }
+
+  &__username {
+    @include fonts.p1;
+    color: #647196;
+    margin: 0;
+    padding: 0;
+    grid-area: 2 / 2 / 3 / 3;
+
+    @media screen and (max-width: 750px) {
+      @include fonts.p3;
+    }
+  }
+
+  &__reply-btn {
+    @include fonts.p3;
+    color: #4661e6;
+    margin: 0;
+    padding: 0;
+    grid-area: 1 / 3 / 3 / 4;
+    border: none;
+    background-color: transparent;
+    justify-self: right;
+
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+
+  &__text {
+    @include fonts.p2;
+    color: #647196;
+    margin: 0;
+    padding: 17px 0 32px 0;
+    grid-area: 3 / 2 / 4 / 4;
+
+    @media screen and (max-width: 750px) {
+      @include fonts.p3;
+      grid-area: 3 / 1 / 4 / 4;
+    }
+  }
+
+  &__reply-form {
+    grid-area: 4 / 2 / 5 / 4;
+    display: grid;
+    grid-template-columns: 1fr 133px;
+    @media screen and (max-width: 550px) {
+      grid-area: 4 / 1 / 5 / 4;
+    }
+  }
+
+  &__textarea {
+    margin: 0;
+    padding: 5px 10px;
+    min-height: 81px;
+    grid-area: 1 / 1 / 2 / 2;
+    resize: none;
+    background-color: #f7f8fd;
+    border-radius: 10px;
+    border-color: #4661e6;
+    @include fonts.p2;
+    color: #8c92b3;
+  }
+
+  &__reply-target {
+    @include fonts.h4;
+    color: #ad1fea;
+    margin: 0;
+    padding: 0;
+    @media screen and (max-width: 750px) {
+      @include fonts.p3;
+    }
+  }
+
+  &__reply {
+    display: grid;
+    grid-template-columns: 72px 1fr 33px;
+    grid-template-rows: repeat(2, 20px) max-content;
+    margin: 0;
+    width: 85%;
+    align-self: flex-end;
+    padding: 32px 0 0 24px;
+    border-left: 1px solid rgba(100, 113, 150, 0.1);
+    border-top: none;
+    @media screen and (max-width: 750px) {
+      padding: 24px 0 0 24px;
+    }
+  }
+}

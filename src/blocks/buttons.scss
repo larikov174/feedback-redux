@@ -12,7 +12,7 @@
   padding: 0;
   text-decoration: none;
 
-  &__submit {
+  &_submit {
     background-color: #ad1fea;
     width: 158px;
     height: 44px;
@@ -24,6 +24,12 @@
 
     &_place_empty {
       margin: 48px 0 0 0;
+    }
+
+    &_place_comment {
+      grid-area: 1 / 2 / 2 / 3;
+      width: 117px;
+      margin: 0 0 0 16px;
     }
 
     @media screen and (max-width: 550px) {
