@@ -1436,7 +1436,6 @@ template {
   border-radius: 50%;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url(./assets/shared/icon-pen.svg);
   transform: translate(42px, 40px);
 }
 @media screen and (max-width: 620px) {
@@ -1449,6 +1448,12 @@ template {
   .form__icon {
     transform: translate(24px, 40px);
   }
+}
+.form__icon_type_edit {
+  background-image: url(./assets/shared/icon-pen.svg);
+}
+.form__icon_type_add {
+  background-image: url(./assets/shared/icon-plus.svg);
 }
 .form__title {
   font-family: "Jost", sans-serif;

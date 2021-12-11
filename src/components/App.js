@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { Main } from "./Main";
 import { Empty } from "./Empty";
-// import { Card } from "./Card";
 import { CommentsContainer } from "./CommentsContainer";
-import { EditComment } from "./EditComment";
+import { EditPost } from "./EditPost";
+import { AddPost } from "./AddPost";
 import { Footer } from "./Footer";
 import api from "../utils/api";
 
@@ -36,10 +36,10 @@ function App() {
   return (
     <div className="page">
       <Routes>
-        <Route index
-          element={cards !== [] ? <Main data={cards} onCardClick={handleCardClick} /> : <Empty />} />
-        <Route path="/comments" element={<CommentsContainer data={selectedCard} />} />
-        <Route path="/edit" element={<EditComment data={selectedCard} />} />
+        <Route path="/" element={cards !== [] ? <Main data={cards} onCardClick={handleCardClick} /> : <Empty />} />
+        <Route path="comments" element={<CommentsContainer data={selectedCard} />} />
+        <Route path="edit" element={<EditPost data={selectedCard} />} />
+        <Route path="add" element={<AddPost data={selectedCard} />} />
       </Routes>
       <Footer />
     </div>
