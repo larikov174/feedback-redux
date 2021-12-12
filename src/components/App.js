@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, Suspense } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { Main } from "./Main";
 import { Empty } from "./Empty";
@@ -8,6 +8,7 @@ import { AddPost } from "./AddPost";
 import { Footer } from "./Footer";
 import api from "../utils/api";
 import { useAtom } from "jotai";
+import { useAtomValue } from 'jotai/utils'
 import { Posts, SelectedPost } from "../atoms/Atoms";
 
 // import { Hamburger } from "./components/hamburger/Hamburger";
@@ -16,7 +17,7 @@ function App() {
   const navigate = useNavigate();
   const { loadPosts, updatePost, createPost, likePost, dislikePost, deletePost } = api();
   const [initPosts, setInitPosts] = useAtom(Posts);
-  const [selectedPost, setSelectedPost] = useAtom(SelectedPost);
+  const selectedPost = useAtomValue(SelectedPost);
   const onLoadInitData = () => {
     loadPosts()
       .then((res) => setInitPosts(res))
@@ -24,10 +25,9 @@ function App() {
   };
 
   useEffect(() => {
-      onLoadInitData();
+    onLoadInitData();
     // eslint-disable-next-line
   }, []);
-
 
   const handlePostEdit = (post) => {
     updatePost(post)
@@ -39,10 +39,12 @@ function App() {
       .then(() => navigate(`/`))
   }
 
-  const handleVote = ({ upvotes, id }) => {
-    return upvotes.some(voteId => voteId === "61b10988f80a6a283ac08d52")
-      ? dislikePost(id)
-      : likePost(id)
+  const handleVote = (post) => {
+    console.log(post);
+    const condition = post.upvotes.some(voteId => voteId === "61b10988f80a6a283ac08d52")
+    return condition
+      ? dislikePost(post._id)
+      : likePost(post._id)
   }
 
   const handlePostDelete = (id) => {
@@ -51,13 +53,15 @@ function App() {
 
   return (
     <div className="page">
-      <Routes>
-        <Route path="/" element={initPosts !== [] ? <Main onVote={handleVote} /> : <Empty />} />
-        <Route path="comments" element={<CommentsContainer data={selectedPost} />} />
-        <Route path="edit" element={<EditPost postToEdit={selectedPost} onEditPost={handlePostEdit} onDelete={handlePostDelete} />} />
-        <Route path="add" element={<AddPost onSubmitPost={handlePostSubmit} />} />
-      </Routes>
-      <Footer />
+      <Suspense fallback="Loading...">
+        <Routes>
+          <Route path="/" element={initPosts !== [] ? <Main onVote={handleVote} /> : <Empty />} />
+          <Route path="comments" element={<CommentsContainer data={selectedPost} />} />
+          <Route path="edit" element={<EditPost postToEdit={selectedPost} onEditPost={handlePostEdit} onDelete={handlePostDelete} />} />
+          <Route path="add" element={<AddPost onSubmitPost={handlePostSubmit} />} />
+        </Routes>
+        <Footer />
+      </Suspense>
     </div>
   );
 }

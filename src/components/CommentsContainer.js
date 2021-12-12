@@ -16,7 +16,7 @@ export const CommentsContainer = ({ data }) => {
         </Link>
       </header>
 
-      <Post data={data} />
+      <Post post={data} />
 
       <section className="comment">
         <h1 className="comment__title">{data.comments.length} Comments</h1>

@@ -1,25 +1,21 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useAtom } from "jotai";
+
 import { SelectedPost } from "../atoms/Atoms";
 
 export const Post = ({ post, onVote }) => {
   const navigate = useNavigate();
+  // eslint-disable-next-line
   const [selectedPost, setSelectedPost] = useAtom(SelectedPost);
-console.log(post);
 
-  React.useEffect(()=>{
+
+  const handleVoteClick = () => {
     setSelectedPost(post);
-  },[])
-
-
-  const handleVoteClick = (e) => {
-    e.preventDefault();
-    onVote();
-    // setSelectedPost({ upvotes: post.upvotes, id: post._id });
+    onVote(post)
   }
-  const handlePostClick = (e) => {
-    e.preventDefault();
+
+  const handlePostClick = () => {
     setSelectedPost(post);
     navigate(`/comments`)
   }

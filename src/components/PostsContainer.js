@@ -1,10 +1,10 @@
 import React from "react";
 import { Post } from "./Post";
-import { useAtom } from "jotai";
+import { useAtomValue } from 'jotai/utils'
 import { Posts } from "../atoms/Atoms";
 
 export const PostsContainer = ({ onVote }) => {
-  const [posts, setPosts] = useAtom(Posts);
+  const posts = useAtomValue(Posts);
 
   return (
     <section className="feed-cards">
