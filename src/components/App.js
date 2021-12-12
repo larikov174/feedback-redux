@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { Main } from "./Main";
 import { Empty } from "./Empty";
@@ -7,31 +7,27 @@ import { EditPost } from "./EditPost";
 import { AddPost } from "./AddPost";
 import { Footer } from "./Footer";
 import api from "../utils/api";
+import { useAtom } from "jotai";
+import { Posts, SelectedPost } from "../atoms/Atoms";
 
 // import { Hamburger } from "./components/hamburger/Hamburger";
 
 function App() {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   const { loadPosts, updatePost, createPost, likePost, dislikePost, deletePost } = api();
-  const [posts, setPosts] = useState([]);
-  const [selectedPost, setSelectedPost] = useState({});
+  const [initPosts, setInitPosts] = useAtom(Posts);
+  const [selectedPost, setSelectedPost] = useAtom(SelectedPost);
   const onLoadInitData = () => {
     loadPosts()
-      .then((res) => setPosts(res))
+      .then((res) => setInitPosts(res))
       .catch((err) => console.log(err));
   };
 
   useEffect(() => {
-    if (posts !== []) {
       onLoadInitData();
-    }
     // eslint-disable-next-line
   }, []);
 
-  const handlePostSelect = (post) => {
-    setSelectedPost(post);
-    navigate(`/comments`)
-  };
 
   const handlePostEdit = (post) => {
     updatePost(post)
@@ -56,7 +52,7 @@ function App() {
   return (
     <div className="page">
       <Routes>
-        <Route path="/" element={posts !== [] ? <Main data={posts} onPostClick={handlePostSelect} onVote={handleVote} /> : <Empty />} />
+        <Route path="/" element={initPosts !== [] ? <Main onVote={handleVote} /> : <Empty />} />
         <Route path="comments" element={<CommentsContainer data={selectedPost} />} />
         <Route path="edit" element={<EditPost postToEdit={selectedPost} onEditPost={handlePostEdit} onDelete={handlePostDelete} />} />
         <Route path="add" element={<AddPost onSubmitPost={handlePostSubmit} />} />
