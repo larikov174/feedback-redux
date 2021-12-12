@@ -12,34 +12,54 @@ import api from "../utils/api";
 
 function App() {
   let navigate = useNavigate();
-  const { loadCards } = api();
-  const [cards, setCards] = useState([]);
-  const [selectedCard, setSelectedCard] = useState({});
-  const onStartGetData = () => {
-    loadCards()
-      .then((res) => setCards(res))
+  const { loadPosts, updatePost, createPost, likePost, dislikePost, deletePost } = api();
+  const [posts, setPosts] = useState([]);
+  const [selectedPost, setSelectedPost] = useState({});
+  const onLoadInitData = () => {
+    loadPosts()
+      .then((res) => setPosts(res))
       .catch((err) => console.log(err));
   };
 
   useEffect(() => {
-    if (cards !== []) {
-      onStartGetData();
+    if (posts !== []) {
+      onLoadInitData();
     }
     // eslint-disable-next-line
   }, []);
 
-  const handleCardClick = (card) => {
-    setSelectedCard(card);
+  const handlePostSelect = (post) => {
+    setSelectedPost(post);
     navigate(`/comments`)
   };
+
+  const handlePostEdit = (post) => {
+    updatePost(post)
+      .then(() => navigate(`/`))
+  }
+
+  const handlePostSubmit = (post) => {
+    createPost(post)
+      .then(() => navigate(`/`))
+  }
+
+  const handleVote = ({ upvotes, id }) => {
+    return upvotes.some(voteId => voteId === "61b10988f80a6a283ac08d52")
+      ? dislikePost(id)
+      : likePost(id)
+  }
+
+  const handlePostDelete = (id) => {
+    deletePost(id)
+  }
 
   return (
     <div className="page">
       <Routes>
-        <Route path="/" element={cards !== [] ? <Main data={cards} onCardClick={handleCardClick} /> : <Empty />} />
-        <Route path="comments" element={<CommentsContainer data={selectedCard} />} />
-        <Route path="edit" element={<EditPost data={selectedCard} />} />
-        <Route path="add" element={<AddPost data={selectedCard} />} />
+        <Route path="/" element={posts !== [] ? <Main data={posts} onPostClick={handlePostSelect} onVote={handleVote} /> : <Empty />} />
+        <Route path="comments" element={<CommentsContainer data={selectedPost} />} />
+        <Route path="edit" element={<EditPost postToEdit={selectedPost} onEditPost={handlePostEdit} onDelete={handlePostDelete} />} />
+        <Route path="add" element={<AddPost onSubmitPost={handlePostSubmit} />} />
       </Routes>
       <Footer />
     </div>

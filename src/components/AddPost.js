@@ -1,7 +1,27 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-export const AddPost = ({ data }) => {
+export const AddPost = ({ onSubmitPost }) => {
+  const navigate = useNavigate();
+  const [title, setTitle] = React.useState('');
+  const [category, setCategory] = React.useState('');
+  const [description, setDescription] = React.useState('');
+  const status = 'Suggestion';
+  const handleTitleChange = (e) => setTitle(e.target.value);
+  const handleCategoryChange = (e) => setCategory(e.target.value);
+  const handleDescriptionChange = (e) => setDescription(e.target.value);
+  const handleCancel = () => navigate('/');
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSubmitPost({
+      title,
+      category,
+      description,
+      status,
+    })
+  }
 
   return (
     <article className="edit-container">
@@ -26,7 +46,9 @@ export const AddPost = ({ data }) => {
           placeholder=""
           minLength="2"
           maxLength="40"
-          required=""
+          value={title || ''}
+          onChange={handleTitleChange}
+          required={true}
         />
         <h2 className="form__subtitle">Category</h2>
         <label htmlFor="selectCategory" className="form__text">
@@ -37,14 +59,16 @@ export const AddPost = ({ data }) => {
           className="form__select"
           name="category"
           type="text"
-          required=""
+          required={true}
+          value={category || ''}
+          onChange={handleCategoryChange}
         >
           <option value="null"></option>
-          <option value="Feature">Feature</option>
+          <option value="feature">Feature</option>
           <option value="UI">UI</option>
           <option value="UX">UX</option>
-          <option value="Enhancement">Enhancement</option>
-          <option value="Bug">Bug</option>
+          <option value="enhancement">Enhancement</option>
+          <option value="bug">Bug</option>
         </select>
         <h2 className="form__subtitle">Feedback Detail</h2>
         <label htmlFor="inputComment" className="form__text">
@@ -58,13 +82,21 @@ export const AddPost = ({ data }) => {
           placeholder=""
           minLength="2"
           maxLength="100"
-          required=""
+          required={true}
+          value={description || ''}
+          onChange={handleDescriptionChange}
         ></textarea>
         <div className="form__actions">
-          <button className="button button_cancel">Cancel</button>
+          <button
+            className="button button_cancel"
+            type="button"
+            onClick={handleCancel}>
+            Cancel
+          </button>
           <button
             className="button button_submit button_place_edit"
             type="submit"
+            onClick={handleSubmit}
           >
             Add Feedback
           </button>

@@ -1,12 +1,12 @@
 import React from "react";
-import { Card } from "./Card";
+import { Post } from "./Post";
 
-export const PostsContainer = ({ cards, onCardClick }) => {
+export const PostsContainer = ({ posts, onPostClick, onVote }) => {
 
   return (
     <section className="feed-cards">
-      {cards.map((item) => (
-        <Card data={item} key={item._id} onCardClick={onCardClick} />
+      {posts.map((item) => (
+        <Post data={item} key={item._id} onPostClick={onPostClick} onVote={onVote} />
       ))}
     </section>
   );

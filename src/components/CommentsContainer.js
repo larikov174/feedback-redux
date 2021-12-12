@@ -1,5 +1,5 @@
 import React from "react";
-import { Card } from "./Card";
+import { Post } from "./Post";
 import { Comment } from "./Comment";
 import { Link } from "react-router-dom";
 
@@ -16,7 +16,7 @@ export const CommentsContainer = ({ data }) => {
         </Link>
       </header>
 
-      <Card data={data} />
+      <Post data={data} />
 
       <section className="comment">
         <h1 className="comment__title">{data.comments.length} Comments</h1>
