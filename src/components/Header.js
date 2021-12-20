@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Hamburger } from "./Hamburger";
+import { DropMenu } from "./DropMenu";
 
 export const Header = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -16,6 +17,7 @@ export const Header = () => {
       <button className="header__hamburger-button" onClick={handleClick}></button>
     </header>
       <Hamburger visibility={isVisible} />
+      <DropMenu visibility={isVisible} />
     </>
   );
 };
