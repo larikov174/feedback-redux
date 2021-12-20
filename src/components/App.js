@@ -1,47 +1,67 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, Suspense } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { Main } from "./Main";
 import { Empty } from "./Empty";
-// import { Card } from "./Card";
 import { CommentsContainer } from "./CommentsContainer";
-import { EditComment } from "./EditComment";
+import { EditPost } from "./EditPost";
+import { AddPost } from "./AddPost";
 import { Footer } from "./Footer";
 import api from "../utils/api";
+import { useAtom } from "jotai";
+import { useAtomValue } from 'jotai/utils'
+import { Posts, SelectedPost } from "../atoms/Atoms";
 
 // import { Hamburger } from "./components/hamburger/Hamburger";
 
 function App() {
-  let navigate = useNavigate();
-  const { loadCards } = api();
-  const [cards, setCards] = useState([]);
-  const [selectedCard, setSelectedCard] = useState({});
-  const onStartGetData = () => {
-    loadCards()
-      .then((res) => setCards(res))
+  const navigate = useNavigate();
+  const { loadPosts, updatePost, createPost, likePost, dislikePost, deletePost } = api();
+  const [initPosts, setInitPosts] = useAtom(Posts);
+  const selectedPost = useAtomValue(SelectedPost);
+  const onLoadInitData = () => {
+    loadPosts()
+      .then((res) => setInitPosts(res))
       .catch((err) => console.log(err));
   };
 
   useEffect(() => {
-    if (cards !== []) {
-      onStartGetData();
-    }
+    onLoadInitData();
     // eslint-disable-next-line
   }, []);
 
-  const handleCardClick = (card) => {
-    setSelectedCard(card);
-    navigate(`/comments`)
-  };
+  const handlePostEdit = (post) => {
+    updatePost(post)
+      .then(() => navigate(`/`))
+  }
+
+  const handlePostSubmit = (post) => {
+    createPost(post)
+      .then(() => navigate(`/`))
+  }
+
+  const handleVote = (post) => {
+    console.log(post);
+    const condition = post.upvotes.some(voteId => voteId === "61b10988f80a6a283ac08d52")
+    return condition
+      ? dislikePost(post._id)
+      : likePost(post._id)
+  }
+
+  const handlePostDelete = (id) => {
+    deletePost(id)
+  }
 
   return (
     <div className="page">
-      <Routes>
-        <Route index
-          element={cards !== [] ? <Main data={cards} onCardClick={handleCardClick} /> : <Empty />} />
-        <Route path="/comments" element={<CommentsContainer data={selectedCard} />} />
-        <Route path="/edit" element={<EditComment data={selectedCard} />} />
-      </Routes>
-      <Footer />
+      <Suspense fallback="Loading...">
+        <Routes>
+          <Route path="/" element={initPosts !== [] ? <Main onVote={handleVote} /> : <Empty />} />
+          <Route path="comments" element={<CommentsContainer data={selectedPost} />} />
+          <Route path="edit" element={<EditPost postToEdit={selectedPost} onEditPost={handlePostEdit} onDelete={handlePostDelete} />} />
+          <Route path="add" element={<AddPost onSubmitPost={handlePostSubmit} />} />
+        </Routes>
+        <Footer />
+      </Suspense>
     </div>
   );
 }

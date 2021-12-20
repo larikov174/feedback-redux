@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useAtom } from "jotai";
+import { Posts } from "../atoms/Atoms";
 
-export const ControlBar = ({ cards }) => {
+export const ControlBar = () => {
+  const posts = useAtom(Posts);
   const tagNames = [
     "Most Upvotes",
     "Least Upvotes",
@@ -18,9 +21,9 @@ export const ControlBar = ({ cards }) => {
   return (
     <section className="control-bar">
       <div className="control-bar__icon" />
-      <div className="control-bar__title">{cards.length} Suggestions</div>
+      <div className="control-bar__title">{posts[0].length} Suggestions</div>
       <Link
-        to="/"
+        to="/add"
         className="button button_submit button_place_control-bar"
       >
         &#43; Add Feedback

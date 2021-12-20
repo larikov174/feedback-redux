@@ -3,13 +3,13 @@ import { Menu } from "./Menu";
 import { ControlBar } from "./ControlBar";
 import { PostsContainer } from "./PostsContainer";
 
-export const Main = ({ data, onCardClick }) => {
+export const Main = ({ onVote }) => {
 
   return (
     <article className="main">
       <Menu />
-      <ControlBar cards={data} />
-      <PostsContainer cards={data} onCardClick={onCardClick} />
+      <ControlBar />
+      <PostsContainer onVote={onVote} />
     </article>
   );
 };

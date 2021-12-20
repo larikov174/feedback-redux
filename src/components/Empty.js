@@ -11,7 +11,7 @@ export const Empty = () => {
         about new ideas to improve our app.
       </p>
       <Link
-        to="/"
+        to="/add"
         className="button button__submit button_place_empty"
       >
         &#43; Add Feedback

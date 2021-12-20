@@ -1,7 +1,33 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-export const EditComment = ({ data }) => {
+export const EditPost = ({ postToEdit, onEditPost, onDelete }) => {
+  const navigate = useNavigate();
+  const [title, setTitle] = React.useState(postToEdit.title);
+  const [category, setCategory] = React.useState(postToEdit.category);
+  const [description, setDescription] = React.useState(postToEdit.description);
+  const [status, setStatus] = React.useState(postToEdit.status);
+  const handleTitleChange = (e) => setTitle(e.target.value);
+  const handleCategoryChange = (e) => setCategory(e.target.value);
+  const handleDescriptionChange = (e) => setDescription(e.target.value);
+  const handleStatusChange = (e) => setStatus(e.target.value);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onEditPost({
+      title,
+      category,
+      description,
+      status,
+      id: postToEdit._id
+    })
+  }
+
+  const handleDelete = (e) => {
+    e.preventDefault();
+    onDelete(postToEdit._id);
+    navigate('/');
+  }
 
   return (
     <article className="edit-container">
@@ -11,9 +37,9 @@ export const EditComment = ({ data }) => {
           Go Back
         </Link>
       </header>
-      <div className="form__icon"></div>
+      <div className="form__icon form__icon_type_edit"></div>
       <form className="form" action="#">
-        <h1 className="form__title">Editing `Add a dark theme option`</h1>
+        <h1 className="form__title">Editing '{title}'</h1>
         <h2 className="form__subtitle">Feedback Title</h2>
         <label htmlFor="inputTitle" className="form__text">
           Add a short, descriptive headline
@@ -23,10 +49,12 @@ export const EditComment = ({ data }) => {
           className="form__input"
           name="title"
           type="text"
+          value={title || ''}
+          onChange={handleTitleChange}
+          required={true}
           placeholder=""
           minLength="2"
           maxLength="40"
-          required=""
         />
         <h2 className="form__subtitle">Category</h2>
         <label htmlFor="selectCategory" className="form__text">
@@ -37,25 +65,29 @@ export const EditComment = ({ data }) => {
           className="form__select"
           name="category"
           type="text"
-          required=""
+          required={true}
+          value={category || ''}
+          onChange={handleCategoryChange}
         >
           <option value="null"></option>
-          <option value="Feature">Feature</option>
+          <option value="feature">Feature</option>
           <option value="UI">UI</option>
           <option value="UX">UX</option>
-          <option value="Enhancement">Enhancement</option>
-          <option value="Bug">Bug</option>
+          <option value="enhancement">Enhancement</option>
+          <option value="bug">Bug</option>
         </select>
         <h2 className="form__subtitle">Update Status</h2>
-        <label htmlFor="selectOption" className="form__text">
+        <label htmlFor="selectStatus" className="form__text">
           Change feedback state
         </label>
         <select
-          id="selectOption"
+          id="selectStatus"
           className="form__select"
-          name="category"
+          name="status"
           type="text"
-          required=""
+          required={true}
+          value={status || ''}
+          onChange={handleStatusChange}
         >
           <option value="null"></option>
           <option value="Suggestion">Suggestion</option>
@@ -75,14 +107,17 @@ export const EditComment = ({ data }) => {
           placeholder=""
           minLength="2"
           maxLength="100"
-          required=""
-        ></textarea>
+          required={true}
+          value={description || ''}
+          onChange={handleDescriptionChange}
+        >{description}</textarea>
         <div className="form__actions">
-          <button className="button button_delete">Delete</button>
+          <button type="button" onClick={handleDelete} className="button button_delete">Delete</button>
           <button className="button button_cancel">Cancel</button>
           <button
             className="button button_submit button_place_edit"
             type="submit"
+            onClick={handleSubmit}
           >
             Add Feedback
           </button>

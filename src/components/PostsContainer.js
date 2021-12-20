@@ -1,12 +1,15 @@
 import React from "react";
-import { Card } from "./Card";
+import { Post } from "./Post";
+import { useAtomValue } from 'jotai/utils'
+import { Posts } from "../atoms/Atoms";
 
-export const PostsContainer = ({ cards, onCardClick }) => {
+export const PostsContainer = ({ onVote }) => {
+  const posts = useAtomValue(Posts);
 
   return (
     <section className="feed-cards">
-      {cards.map((item) => (
-        <Card data={item} key={item._id} onCardClick={onCardClick} />
+      {posts.map((item) => (
+        <Post post={item} key={item._id} onVote={onVote} />
       ))}
     </section>
   );

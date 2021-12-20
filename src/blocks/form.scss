@@ -19,7 +19,6 @@
     border-radius: 50%;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url(./assets/shared/icon-pen.svg);
     transform: translate(42px, 40px);
     @media screen and (max-width: 620px) {
       width: 40px;
@@ -27,6 +26,12 @@
     }
     @media screen and (max-width: 500px) {
       transform: translate(24px, 40px);
+    }
+    &_type_edit {
+      background-image: url(./assets/shared/icon-pen.svg);
+    }
+    &_type_add {
+      background-image: url(./assets/shared/icon-plus.svg);
     }
   }
 
