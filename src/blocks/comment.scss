@@ -106,10 +106,13 @@
 
   &__reply-form {
     grid-area: 4 / 2 / 5 / 4;
-    display: grid;
+    display: none;
     grid-template-columns: 1fr 133px;
     @media screen and (max-width: 550px) {
       grid-area: 4 / 1 / 5 / 4;
+    }
+    &_visible {
+      display: grid;
     }
   }
 

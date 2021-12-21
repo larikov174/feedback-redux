@@ -447,14 +447,6 @@ template {
   grid-template-rows: 26px 16px;
   grid-auto-rows: 31px;
 }
-.hamburger__tag-area {
-  width: 100%;
-  min-height: 166px;
-  background: #ffff;
-  border-radius: 10px;
-  padding: 24px 50px 24px 24px;
-  box-sizing: border-box;
-}
 
 .page {
   min-height: 100vh;
@@ -568,6 +560,7 @@ template {
   align-items: center;
   justify-content: center;
   user-select: none;
+  text-decoration: none;
 }
 .tag-item_place_menu {
   margin-bottom: 14px;
@@ -1404,13 +1397,16 @@ template {
 }
 .comment__reply-form {
   grid-area: 4/2/5/4;
-  display: grid;
+  display: none;
   grid-template-columns: 1fr 133px;
 }
 @media screen and (max-width: 550px) {
   .comment__reply-form {
     grid-area: 4/1/5/4;
   }
+}
+.comment__reply-form_visible {
+  display: grid;
 }
 .comment__textarea {
   margin: 0;
