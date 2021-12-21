@@ -1,0 +1,13 @@
+@use "./fonts";
+
+.add-comment {
+  width: 100%;
+  min-height: 246px;
+  background-color: #ffff;
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  margin: 24px 0 137px 0;
+  padding: 24px 32px 0 34px;
+}

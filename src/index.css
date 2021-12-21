@@ -1460,6 +1460,54 @@ template {
     padding: 24px 0 0 24px;
   }
 }
+.comment__counter {
+  display: flex;
+  width: 122px;
+  min-height: 22px;
+  justify-content: space-between;
+  align-items: center;
+}
+.comment__number {
+  font-family: "Jost", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  color: #647196;
+  margin: 0;
+  padding: 0;
+}
+.comment__text {
+  font-family: "Jost", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  color: #647196;
+  margin: 0;
+  padding: 0;
+}
+.comment__footer {
+  display: flex;
+  min-height: 44px;
+  width: 100%;
+  padding: 16px 0 0 0;
+  margin: 0;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-comment {
+  width: 100%;
+  min-height: 246px;
+  background-color: #ffff;
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  margin: 24px 0 137px 0;
+  padding: 24px 32px 0 34px;
+}
 
 .return {
   display: flex;

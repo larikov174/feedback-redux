@@ -153,4 +153,36 @@
       padding: 24px 0 0 24px;
     }
   }
+
+  &__counter {
+    display: flex;
+    width: 122px;
+    min-height: 22px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__number {
+    @include fonts.p2;
+    color: #647196;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__text {
+    @include fonts.p2;
+    color: #647196;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__footer {
+    display: flex;
+    min-height: 44px;
+    width: 100%;
+    padding: 16px 0 0 0;
+    margin: 0;
+    justify-content: space-between;
+    align-items: center;
+  }
 }

@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Post } from "./Post";
 import { Comment } from "./Comment";
-import { Link } from "react-router-dom";
+import { AddComment } from "./AddComment";
 
 export const CommentsContainer = ({ data }) => {
   return (
@@ -25,6 +26,7 @@ export const CommentsContainer = ({ data }) => {
           <Comment key={comment._id} data={comment} />
         ))}
       </section>
+      <AddComment />
     </section>
   );
 };
