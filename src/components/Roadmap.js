@@ -14,7 +14,7 @@ export const Roadmap = () => {
   ));
 
   return (
-    <nav className="roadmap">
+    <nav className="roadmap__container">
       <div className="roadmap__header">
         <h2 className="roadmap__title">Roadmap</h2>
         <Link to="/" className="roadmap__link">

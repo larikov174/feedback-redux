@@ -2,14 +2,14 @@ import React from "react";
 import { TagArea } from "./TagArea";
 import { Roadmap } from "./Roadmap";
 
-export const Hamburger = ({ visibility }) => {
+export const Hamburger = ({ isVisible }) => {
   return (
-    <article className={`hamburger ${visibility ? 'hamburger_visible' : ''}`}>
+    <article className={`hamburger ${isVisible ? 'hamburger_visible' : ''}`}>
       <div className="hamburger__menu">
-        <nav className="hamburger__tag-area">
+        <nav className="tag-area_place_burger">
           <TagArea />
         </nav>
-        <nav className="hamburger__roadmap">
+        <nav className="hamburger__roadmap roadmap_place_burger">
           <Roadmap />
         </nav>
       </div>

@@ -9,8 +9,6 @@ export const TagArea = () => {
   ));
 
   return (
-    <nav className="tag-area ">
-      <div className="tag-area__container">{renderBtns}</div>
-    </nav>
+    <nav className="tag-area__container">{renderBtns}</nav>
   );
 };
