@@ -1,22 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAtom } from "jotai";
 import { Posts } from "../atoms/Atoms";
+import { DropMenu } from "./DropMenu";
 
 export const ControlBar = () => {
   const posts = useAtom(Posts);
-  const tagNames = [
-    "Most Upvotes",
-    "Least Upvotes",
-    "Most Comments",
-    "Least Comments",
-  ];
-  const renderLis = tagNames.map((name) => (
-    <li key={name} className="control-bar__drop-menu-item">
-      <div className="control-bar__drop-menu-text">{name}</div>
-      <div className="control-bar__drop-menu-icon" />
-    </li>
-  ));
+  const [isVisible, setIsVisible] = useState(false);
+  const handleClick = () => setIsVisible(!isVisible);
 
   return (
     <section className="control-bar">
@@ -28,12 +19,12 @@ export const ControlBar = () => {
       >
         &#43; Add Feedback
       </Link>
-      <nav className="control-bar__sort-unit">
+      <nav className="control-bar__sort-unit" onClick={handleClick}>
         Sort by&nbsp;:&nbsp;
         <span className="control-bar__sort-text">Most Upvotes</span>
         <div className="control-bar__sort-arrow" />
       </nav>
-      <ul className="control-bar__drop-menu">{renderLis}</ul>
+      <DropMenu isVisible={isVisible} />
     </section>
   );
 };

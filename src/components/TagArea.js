@@ -1,16 +1,23 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 export const TagArea = () => {
-  const tagNames = ["All", "UX", "UI", "Enhancement", "Bug", "Feature"];
-  const renderBtns = tagNames.map((name) => (
-    <button className="tag-item tag-item_place_menu" key={name} type="button">
-      {name}
-    </button>
+  const tags = [
+    { title: "All", path: "/category/all" },
+    { title: "UX", path: "/category/ux" },
+    { title: "UI", path: "/category/ui" },
+    { title: "Enhancement", path: "/category/enhancement" },
+    { title: "Bug", path: "/category/bug" },
+    { title: "Feature", path: "/category/feature" }
+  ];
+  const renderBtns = tags.map((tag) => (
+    <NavLink to={tag.path} className={({ isActive }) => `tag-item tag-item_place_menu ${isActive ? 'tag-item_active' : ''}`} key={tag.title} onClick={(e) => console.log(e.target)}>
+      {tag.title}
+    </NavLink>
+
   ));
 
   return (
-    <nav className="tag-area ">
-      <div className="tag-area__container">{renderBtns}</div>
-    </nav>
+    <nav className="tag-area__container">{renderBtns}</nav>
   );
 };

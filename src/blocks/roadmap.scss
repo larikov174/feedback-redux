@@ -1,15 +1,24 @@
 @use "./fonts";
 
 .roadmap {
-  background: #ffff;
-  border-radius: 10px;
-  margin: 0;
-  padding: 19px 24px 24px;
-  box-sizing: border-box;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 26px;
-  grid-auto-rows: 23px;
+  &_place_main {
+    @media screen and (max-width: 730px) {
+      display: none;
+    }
+  }
+
+  &_place_burger {
+    display: block;
+  }
+
+  &__container {
+    max-height: 178px;
+    background: #ffff;
+    border-radius: 10px;
+    margin: 0;
+    padding: 19px 24px 24px;
+    box-sizing: border-box;
+  }
 
   &__header {
     display: flex;
@@ -66,10 +75,6 @@
         @include fonts.h3;
       }
     }
-  }
-
-  @media screen and (max-width: 730px) {
-    display: none;
   }
 
   &__link {

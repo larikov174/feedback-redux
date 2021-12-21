@@ -1,18 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { Reply } from "./Reply";
 
 export const Comment = ({ data }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const handleClick = () => setIsVisible(!isVisible);
+
   return (
     <>
       <article className="comment__card">
-        <img className="comment__avatar" src={data.owner.image} alt="author avatar"/>
+        <img className="comment__avatar" src={data.owner.image} alt="author avatar" />
         <h2 className="comment__name">{data.owner.name}</h2>
         <p className="comment__username">@{data.owner.username}</p>
-        <button type="button" className="comment__reply-btn">
+        <button type="button" className="comment__reply-btn" onClick={handleClick} >
           Reply
         </button>
         <p className="comment__text">{data.content}</p>
-        <form className="comment__reply-form">
+        <form className={`comment__reply-form ${isVisible ? 'comment__reply-form_visible' : ''}`}>
           <textarea className="comment__textarea"></textarea>
           <button
             type="submit"

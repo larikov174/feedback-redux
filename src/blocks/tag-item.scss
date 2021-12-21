@@ -13,6 +13,7 @@
   align-items: center;
   justify-content: center;
   user-select: none;
+  text-decoration: none;
 
   &_place {
     &_menu {
@@ -31,7 +32,7 @@
   &_active {
     background-color: #4661e6;
     color: #ffffff;
-    
+
     &:hover {
       background-color: #4661e6;
     }

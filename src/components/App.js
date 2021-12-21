@@ -1,6 +1,8 @@
-import React, { useEffect, Suspense } from "react";
+import React, { useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import { Main } from "./Main";
+import { Menu } from "./Menu";
+import { ControlBar } from "./ControlBar";
+import { PostsContainer } from "./PostsContainer";
 import { Empty } from "./Empty";
 import { CommentsContainer } from "./CommentsContainer";
 import { EditPost } from "./EditPost";
@@ -10,8 +12,6 @@ import api from "../utils/api";
 import { useAtom } from "jotai";
 import { useAtomValue } from 'jotai/utils'
 import { Posts, SelectedPost } from "../atoms/Atoms";
-
-// import { Hamburger } from "./components/hamburger/Hamburger";
 
 function App() {
   const navigate = useNavigate();
@@ -53,15 +53,22 @@ function App() {
 
   return (
     <div className="page">
-      <Suspense fallback="Loading...">
-        <Routes>
-          <Route path="/" element={initPosts !== [] ? <Main onVote={handleVote} /> : <Empty />} />
-          <Route path="comments" element={<CommentsContainer data={selectedPost} />} />
-          <Route path="edit" element={<EditPost postToEdit={selectedPost} onEditPost={handlePostEdit} onDelete={handlePostDelete} />} />
-          <Route path="add" element={<AddPost onSubmitPost={handlePostSubmit} />} />
-        </Routes>
-        <Footer />
-      </Suspense>
+      <Routes>
+        <Route path="/" element={initPosts !== [] ?
+          <article className="main">
+            <Menu />
+            <ControlBar />
+            <PostsContainer onVote={handleVote} />
+          </article>
+          : <Empty />
+        }>
+          <Route path="category/:category" element={<PostsContainer onVote={handleVote} />} />
+        </Route>
+        <Route path="comments" element={<CommentsContainer data={selectedPost} />} />
+        <Route path="edit" element={<EditPost postToEdit={selectedPost} onEditPost={handlePostEdit} onDelete={handlePostDelete} />} />
+        <Route path="add" element={<AddPost onSubmitPost={handlePostSubmit} />} />
+      </Routes>
+      <Footer />
     </div>
   );
 }
