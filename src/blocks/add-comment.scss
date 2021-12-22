@@ -10,4 +10,9 @@
   flex-direction: column;
   margin: 24px 0 137px 0;
   padding: 24px 32px 0 34px;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
 }

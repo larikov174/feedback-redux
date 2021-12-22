@@ -43,8 +43,8 @@ function App() {
     console.log(post);
     const condition = post.upvotes.some(voteId => voteId === "61b10988f80a6a283ac08d52")
     return condition
-      ? dislikePost(post._id)
-      : likePost(post._id)
+      ? dislikePost(post._id).then(()=>loadPosts().then((res) => setInitPosts(res)))
+      : likePost(post._id).then(()=>loadPosts().then((res) => setInitPosts(res)))
   }
 
   const handlePostDelete = (id) => {

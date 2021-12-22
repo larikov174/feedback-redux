@@ -1,17 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 export const AddPost = ({ onSubmitPost }) => {
   const navigate = useNavigate();
-  const [title, setTitle] = React.useState('');
-  const [category, setCategory] = React.useState('');
-  const [description, setDescription] = React.useState('');
+  const [title, setTitle] = useState('');
+  const [category, setCategory] = useState('');
+  const [description, setDescription] = useState('');
+  const [textLength, setTextLength] = useState(250);
   const status = 'Suggestion';
   const handleTitleChange = (e) => setTitle(e.target.value);
   const handleCategoryChange = (e) => setCategory(e.target.value);
-  const handleDescriptionChange = (e) => setDescription(e.target.value);
+  const handleDescriptionChange = (e) => {
+    setDescription(e.target.value);
+    setTextLength(() => 250 - e.target.value.length)
+  };
   const handleCancel = () => navigate('/');
-
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -79,13 +82,16 @@ export const AddPost = ({ onSubmitPost }) => {
           className="form__textarea"
           name="detail"
           type="text"
-          placeholder=""
+          placeholder="Type your comment here"
           minLength="2"
-          maxLength="100"
+          maxLength="250"
           required={true}
           value={description || ''}
           onChange={handleDescriptionChange}
         ></textarea>
+        <div className="comment__counter">
+          <p className="comment__text">{textLength} Characters left</p>
+        </div>
         <div className="form__actions">
           <button
             className="button button_cancel"

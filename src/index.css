@@ -1462,7 +1462,7 @@ template {
 }
 .comment__counter {
   display: flex;
-  width: 122px;
+  width: 130px;
   min-height: 22px;
   justify-content: space-between;
   align-items: center;
@@ -1507,6 +1507,10 @@ template {
   flex-direction: column;
   margin: 24px 0 137px 0;
   padding: 24px 32px 0 34px;
+}
+.add-comment__form {
+  display: flex;
+  flex-direction: column;
 }
 
 .return {

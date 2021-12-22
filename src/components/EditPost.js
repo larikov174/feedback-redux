@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 export const EditPost = ({ postToEdit, onEditPost, onDelete }) => {
@@ -7,9 +7,13 @@ export const EditPost = ({ postToEdit, onEditPost, onDelete }) => {
   const [category, setCategory] = React.useState(postToEdit.category);
   const [description, setDescription] = React.useState(postToEdit.description);
   const [status, setStatus] = React.useState(postToEdit.status);
+  const [textLength, setTextLength] = useState(250);
   const handleTitleChange = (e) => setTitle(e.target.value);
   const handleCategoryChange = (e) => setCategory(e.target.value);
-  const handleDescriptionChange = (e) => setDescription(e.target.value);
+  const handleDescriptionChange = (e) => {
+    setDescription(e.target.value);
+    setTextLength(() => 250 - e.target.value.length)
+  };
   const handleStatusChange = (e) => setStatus(e.target.value);
 
   const handleSubmit = (e) => {
@@ -106,11 +110,14 @@ export const EditPost = ({ postToEdit, onEditPost, onDelete }) => {
           type="text"
           placeholder=""
           minLength="2"
-          maxLength="100"
+          maxLength="250"
           required={true}
           value={description || ''}
           onChange={handleDescriptionChange}
         >{description}</textarea>
+        <div className="comment__counter">
+          <p className="comment__text">{textLength} Characters left</p>
+        </div>
         <div className="form__actions">
           <button type="button" onClick={handleDelete} className="button button_delete">Delete</button>
           <button className="button button_cancel">Cancel</button>
