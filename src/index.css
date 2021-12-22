@@ -1159,6 +1159,13 @@ template {
   margin: 0;
   padding: 0;
 }
+.card__vote-button-icon_active {
+  background-image: url(./assets/shared/icon-arrow-up-white.svg);
+}
+.card__vote-button_active {
+  color: #ffffff;
+  background-color: #4661e6;
+}
 .card:hover {
   color: #4661e6;
 }

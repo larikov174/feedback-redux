@@ -18,7 +18,6 @@ function api() {
       }).then(handleResponse);
     },
     createPost(post) {
-      console.log(post);
       return fetch(`${baseUrl}/posts`, {
         method: "POST",
         headers: {

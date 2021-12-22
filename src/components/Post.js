@@ -8,6 +8,7 @@ export const Post = ({ post, onVote }) => {
   const navigate = useNavigate();
   // eslint-disable-next-line
   const [selectedPost, setSelectedPost] = useAtom(SelectedPost);
+  const isUpvoted = post.upvotes.some(voteId => voteId === "61b10988f80a6a283ac08d52")
 
 
   const handleVoteClick = () => {
@@ -22,8 +23,8 @@ export const Post = ({ post, onVote }) => {
 
   return (
     <article className="card">
-      <button type="button" onClick={handleVoteClick} className="card__vote-button">
-        <span className="card__vote-button-icon" />
+      <button type="button" onClick={handleVoteClick} className={`card__vote-button ${isUpvoted ? 'card__vote-button_active' : ''}`}>
+        <span className={`card__vote-button-icon ${isUpvoted ? 'card__vote-button-icon_active' : ''}`} />
         <span className="card__vote-button-number">{post.upvotes.length}</span>
       </button>
       <h2 className="card__title">{post.title}</h2>

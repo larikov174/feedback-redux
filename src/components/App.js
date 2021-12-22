@@ -31,16 +31,15 @@ function App() {
 
   const handlePostEdit = (post) => {
     updatePost(post)
-      .then(() => navigate(`/`))
+      .then(() => navigate(`/`)).then(()=>loadPosts().then((res) => setInitPosts(res)))
   }
 
   const handlePostSubmit = (post) => {
     createPost(post)
-      .then(() => navigate(`/`))
+      .then(() => navigate(`/`)).then(()=>loadPosts().then((res) => setInitPosts(res)))
   }
 
   const handleVote = (post) => {
-    console.log(post);
     const condition = post.upvotes.some(voteId => voteId === "61b10988f80a6a283ac08d52")
     return condition
       ? dislikePost(post._id).then(()=>loadPosts().then((res) => setInitPosts(res)))
@@ -48,7 +47,7 @@ function App() {
   }
 
   const handlePostDelete = (id) => {
-    deletePost(id)
+    deletePost(id).then(()=>loadPosts().then((res) => setInitPosts(res)))
   }
 
   return (

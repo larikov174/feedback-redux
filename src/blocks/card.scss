@@ -77,6 +77,13 @@
       height: 4px;
       margin: 0;
       padding: 0;
+      &_active {
+        background-image: url(./assets/shared/icon-arrow-up-white.svg);
+      }
+    }
+    &_active {
+      color: #ffffff;
+      background-color: #4661e6;
     }
   }
 
