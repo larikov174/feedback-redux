@@ -1,0 +1,63 @@
+@use "./fonts";
+
+.roadmap-page {
+  max-width: 1110px;
+  min-width: 113px;
+  margin: 0 auto;
+  padding: 78px 0 0 0;
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (max-width: 1150px) {
+    margin: 0 39px;
+  }
+
+  &__header {
+    width: 100%;
+    height: 113px;
+    background-color: #373f68;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 27px 40px 27px 32px;
+    box-sizing: border-box;
+  }
+
+  &__columns {
+    max-width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 48px 0 178px 0;
+    list-style: none;
+    @media screen and (max-width: 675px){
+      padding: 0 0 98px 0;
+      justify-content: center;
+    }
+  }
+  &__title {
+    @include fonts.h3;
+    color: #3A4374;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    @media screen and (max-width: 768px){
+      @include fonts.h4;
+    }
+    @media screen and (max-width: 700px){
+      @include fonts.h3;
+    }
+  }
+
+  &__subtitle {
+    @include fonts.p1;
+    color: #647196;
+    margin: 0;
+    padding: 4px 0 0 0;
+    @media screen and (max-width: 768px){
+      @include fonts.p2;
+    }
+  }
+
+}

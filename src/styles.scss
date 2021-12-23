@@ -9,6 +9,8 @@
 @use "./blocks/tag-area";
 @use "./blocks/tag-item";
 @use "./blocks/roadmap";
+@use "./blocks/roadmap-page";
+@use "./blocks/roadmap-card";
 @use "./blocks/control-bar";
 @use "./blocks/drop-menu";
 @use "./blocks/buttons";
@@ -22,3 +24,4 @@
 @use "./blocks/edit";
 @use "./blocks/form";
 @use "./blocks/footer";
+@use "./blocks/theme";

@@ -1,8 +1,0 @@
-.button_place_roadmap-card {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-  width: 69px;
-  height: 40px;
-}

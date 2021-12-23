@@ -1,9 +1,0 @@
-.button_place_empty-feed {
-  margin: 48px 0 0 0;
-}
-
-@media screen and (max-width: 700px) {
-  .button_place_empty-feed {
-    margin: 24px 0 0 0;
-  }
-}

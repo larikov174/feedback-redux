@@ -689,6 +689,181 @@ template {
   color: #8397f8;
 }
 
+.roadmap-page {
+  max-width: 1110px;
+  min-width: 113px;
+  margin: 0 auto;
+  padding: 78px 0 0 0;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 1150px) {
+  .roadmap-page {
+    margin: 0 39px;
+  }
+}
+.roadmap-page__header {
+  width: 100%;
+  height: 113px;
+  background-color: #373f68;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 27px 40px 27px 32px;
+  box-sizing: border-box;
+}
+.roadmap-page__columns {
+  max-width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 48px 0 178px 0;
+  list-style: none;
+}
+@media screen and (max-width: 675px) {
+  .roadmap-page__columns {
+    padding: 0 0 98px 0;
+    justify-content: center;
+  }
+}
+.roadmap-page__title {
+  font-family: "Jost", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: -0.25px;
+  color: #3A4374;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .roadmap-page__title {
+    font-family: "Jost", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: -0.25px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .roadmap-page__title {
+    font-family: "Jost", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: -0.25px;
+  }
+}
+.roadmap-page__subtitle {
+  font-family: "Jost", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23px;
+  color: #647196;
+  margin: 0;
+  padding: 4px 0 0 0;
+}
+@media screen and (max-width: 768px) {
+  .roadmap-page__subtitle {
+    font-family: "Jost", sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+  }
+}
+
+.roadmap-card {
+  background-color: #ffff;
+  border-top: 5px solid;
+  border-radius: 5px 5px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 31px;
+  margin: 32px 0 0 0;
+  border-top-color: #ad1fea;
+}
+@media screen and (max-width: 1150px) {
+  .roadmap-card {
+    padding: 20px;
+  }
+}
+.roadmap-card__overlay {
+  grid-area: 1/1/5/4;
+  z-index: 100;
+  cursor: pointer;
+}
+@media screen and (max-width: 750px) {
+  .roadmap-card__overlay {
+    grid-area: 1/1/5/3;
+  }
+}
+.roadmap-card__header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.roadmap-card__decor {
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background-color: #ad1fea;
+}
+.roadmap-card__text {
+  font-family: "Jost", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23px;
+  color: #647196;
+  margin: 0;
+  padding: 0;
+}
+.roadmap-card__text_subtitle {
+  font-family: "Jost", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23px;
+  padding: 0 0 0 16px;
+}
+.roadmap-card__title {
+  font-family: "Jost", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: -0.25px;
+  color: #3a4374;
+  margin: 0;
+  padding: 8px 0 0 0;
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .roadmap-card__title {
+    font-family: "Jost", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: -0.25px;
+  }
+}
+.roadmap-card__info {
+  display: flex;
+  padding: 16px 0 0 0;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
 .control-bar {
   width: 100%;
   height: 72px;
@@ -1537,6 +1712,7 @@ template {
   padding: 0;
   background-color: transparent;
   border: none;
+  text-decoration: none;
 }
 .return:hover {
   text-decoration: underline;
@@ -1562,6 +1738,13 @@ template {
 }
 .return__arrow_dark {
   background-image: url(./assets/shared/icon-arrow-left.svg);
+}
+.return__arrow_light {
+  background-image: url(./assets/shared/icon-arrow-left-white.svg);
+}
+.return_place_roadmap {
+  color: #fff;
+  margin: 0;
 }
 
 .edit-container {
@@ -1776,6 +1959,16 @@ template {
   .footer {
     flex-direction: column;
   }
+}
+
+.theme_planned {
+  background-color: #f49f85;
+}
+.theme_in-progress {
+  background-color: #ad1fea;
+}
+.theme_live {
+  background-color: #62bcfa;
 }
 
 /*# sourceMappingURL=index.css.map */

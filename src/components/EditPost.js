@@ -96,8 +96,8 @@ export const EditPost = ({ postToEdit, onEditPost, onDelete }) => {
           <option value="null"></option>
           <option value="Suggestion">Suggestion</option>
           <option value="Planned">Planned</option>
-          <option value="In-Progress">In-Progress</option>
-          <option value="Live">Live</option>
+          <option value="in-Progress">in-Progress</option>
+          <option value="live">live</option>
         </select>
         <h2 className="form__subtitle">Feedback Detail</h2>
         <label htmlFor="inputComment" className="form__text">

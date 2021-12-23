@@ -12,6 +12,7 @@
   padding: 0;
   background-color: transparent;
   border: none;
+  text-decoration: none;
 
   &:hover {
     text-decoration: underline;
@@ -34,5 +35,12 @@
     &_dark {
       background-image: url(./assets/shared/icon-arrow-left.svg);
     }
+    &_light {
+      background-image: url(./assets/shared/icon-arrow-left-white.svg);
+    }
+  }
+  &_place_roadmap {
+    color: #fff;
+    margin: 0;
   }
 }

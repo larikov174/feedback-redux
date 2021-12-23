@@ -7,6 +7,7 @@ import { Empty } from "./Empty";
 import { CommentsContainer } from "./CommentsContainer";
 import { EditPost } from "./EditPost";
 import { AddPost } from "./AddPost";
+import { RoadmapPage } from "./RoadmapPage";
 import { Footer } from "./Footer";
 import api from "../utils/api";
 import { useAtom } from "jotai";
@@ -66,6 +67,7 @@ function App() {
         <Route path="comments" element={<CommentsContainer data={selectedPost} />} />
         <Route path="edit" element={<EditPost postToEdit={selectedPost} onEditPost={handlePostEdit} onDelete={handlePostDelete} />} />
         <Route path="add" element={<AddPost onSubmitPost={handlePostSubmit} />} />
+        <Route path="roadmap" element={<RoadmapPage onSubmitPost={handlePostSubmit} />} />
       </Routes>
       <Footer />
     </div>
