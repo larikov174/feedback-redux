@@ -10,8 +10,19 @@
   padding: 31px;
   margin: 32px 0 0 0;
   border-top-color: #ad1fea;
+  max-width: 350px;
+  min-width: 223px;
+  height: 272px;
   @media screen and (max-width: 1150px) {
     padding: 20px;
+  }
+  @media screen and (max-width: 768px){
+    max-width: 223px;
+    height: 251px;
+  }
+  @media screen and (max-width: 375px){
+    max-width: 327px;
+    height: 233px;
   }
 
   &__overlay {

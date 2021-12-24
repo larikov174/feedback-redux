@@ -4,6 +4,8 @@ import { useAtomValue } from 'jotai/utils'
 import { Posts } from "../atoms/Atoms";
 
 export const RoadmapPage = () => {
+  const windowWidth = window.innerWidth;
+  console.log(windowWidth);
   const posts = useAtomValue(Posts);
   const tagNames = [{ name: "Planned", subtitle: "Ideas prioritized for research", theme: "theme_planned" }, { name: "in-Progress", subtitle: "Currently being developed", theme: "theme_in-progress" }, { name: "live", subtitle: "Released features", theme: "theme_live" }];
   const renderList = tagNames.map((tag) => (
@@ -11,30 +13,35 @@ export const RoadmapPage = () => {
       <h2 className="roadmap-page__title">{tag.name}({(posts.filter(post => post.status === tag.name)).length})</h2>
       <p className="roadmap-page__subtitle">{tag.subtitle}</p>
       {posts.map((post) =>
-        <article class="roadmap-card">
-          <div class="roadmap-card__overlay">
-            <div class="roadmap-card__header">
-              <div class="roadmap-card__decor"></div>
-              <p class="roadmap-card__text_subtitle">{(tag.name).toLowerCase()}</p>
+        tag.name === post.status &&
+        <article key={post._id} className="roadmap-card">
+          <div className="roadmap-card__overlay">
+            <div className="roadmap-card__header">
+              <div className="roadmap-card__decor"></div>
+              <p className="roadmap-card__text_subtitle">{(tag.name).toLowerCase()}</p>
             </div>
-            <h3 class="roadmap-card__title">{post.title}</h3>
-            <p class="roadmap-card__text">It would be great to see a more detailed breakdown of solutions.</p>
-            <div class="tag-item tag-item_place_roadmap-card">feature</div>
+            <h3 className="roadmap-card__title">{post.title}</h3>
+            <p className="roadmap-card__text">{post.description}</p>
+            <div className="tag-item tag-item_place_roadmap-card">{post.category}</div>
 
-            <div class="roadmap-card__info">
-              <button class="button button_vote button_place_roadmap-card">
-                <span class="button__icon"></span>
-                <span class="button__vote-number">123</span>
+            <div className="roadmap-card__info">
+              <button className="button button_vote button_place_roadmap-card">
+                <span className="button__icon"></span>
+                <span className="button__vote-number">{post.upvotes.length}</span>
               </button>
               <div className="card__comments">
                 <span className="card__comments-icon" />
-                <span className="card__comments-number">{2}</span>
+                <span className="card__comments-number">{post.comments.length}</span>
               </div>
             </div>
           </div>
         </article>
       )}
     </div>
+  ));
+
+  const renderNav = tagNames.map((tag) => (
+    <h2 key={tag.name} className="roadmap-page__title roadmap-page__title_place_nav">{tag.name}({(posts.filter(post => post.status === tag.name)).length})</h2>
   ));
 
   return (
@@ -45,16 +52,12 @@ export const RoadmapPage = () => {
             <span className="return__arrow return__arrow_light" />
             Go Back
           </Link>
-          <h1 class="roadmap__title roadmap__title_light">Roadmap</h1>
+          <h1 className="roadmap__title roadmap__title_light">Roadmap</h1>
         </div>
-        <button class="button button_submit button_place_control-bar">&#43; Add Feedback</button>
+        <button className="button button_submit button_place_control-bar">&#43; Add Feedback</button>
       </header>
-      <nav class="container-roadmap__menu">
-        <div class="roadmap__title roadmap__title_place_roadmap-menu" id="planned">Planned(2)</div>
-        <div class="roadmap__title roadmap__title_place_roadmap-menu roadmap__title_progress_active" id="progress">
-          In-Progress(2)
-        </div>
-        <div class="roadmap__title roadmap__title_place_roadmap-menu" id="live">Live(2)</div>
+      <nav className="roadmap-page__nav">
+        {renderNav}
       </nav>
       <div className="roadmap-page__columns">
         {renderList}
