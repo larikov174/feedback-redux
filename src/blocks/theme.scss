@@ -1,11 +1,39 @@
+$planned: #f49f85;
+$progress: #ad1fea;
+$live: #62bcfa;
+
 .theme {
   &_planned {
-    background-color: #f49f85;
+    &_bg {
+      background-color: $planned;
+    }
+    &_bb {
+      border-bottom-color: $planned;
+    }
+    &_bt {
+      border-top-color: $planned;
+    }
   }
   &_in-progress {
-    background-color: #ad1fea;
+    &_bg {
+      background-color: $progress;
+    }
+    &_bb {
+      border-bottom-color: $progress;
+    }
+    &_bt {
+      border-top-color: $progress;
+    }
   }
   &_live {
-    background-color: #62bcfa;
+    &_bg {
+      background-color: $live;
+    }
+    &_bb {
+      border-bottom-color: $live;
+    }
+    &_bt {
+      border-top-color: $live;
+    }
   }
 }
